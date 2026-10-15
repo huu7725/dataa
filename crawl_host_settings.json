@@ -1,0 +1,232 @@
+{
+  "baotayninh.vn": {
+    "per_host": 4,
+    "host_interval": 0.2
+  },
+  "ask.39.net": {
+    "per_host": 16,
+    "host_interval": 0.06,
+    "connect_timeout": 5,
+    "retries": 0,
+    "prefer_mobile": true
+  },
+  "www.120ask.com": {
+    "per_host": 2,
+    "host_interval": 1,
+    "timeout": 12,
+    "connect_timeout": 5,
+    "retries": 0,
+    "host_failure_limit": 8
+  },
+  "bingli.iiyi.com": {
+    "per_host": 2,
+    "host_interval": 1,
+    "timeout": 12,
+    "connect_timeout": 5,
+    "retries": 0,
+    "host_failure_limit": 8
+  },
+  "article.iiyi.com": {
+    "per_host": 2,
+    "host_interval": 1,
+    "timeout": 12,
+    "connect_timeout": 5,
+    "retries": 0,
+    "host_failure_limit": 8
+  },
+  "laodong.vn": {
+    "per_host": 3,
+    "host_interval": 0.3,
+    "retries": 1,
+    "host_failure_limit": 8,
+    "timeout": 25
+  },
+  "nhathuoclongchau.com.vn": {
+    "per_host": 4,
+    "host_interval": 0.2,
+    "retries": 1,
+    "host_failure_limit": 8,
+    "timeout": 25
+  },
+  "zysjonline.com": {
+    "per_host": 1,
+    "host_interval": 1,
+    "retries": 0,
+    "host_failure_limit": 8
+  },
+  "pmc-ecm-healthblog.beta.pharmacity.io": {
+    "per_host": 2,
+    "host_interval": 0.3,
+    "retries": 1,
+    "host_failure_limit": 8,
+    "timeout": 25
+  },
+  "pubmed.ncbi.nlm.nih.gov": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "timeout": 20,
+    "connect_timeout": 8,
+    "retries": 1,
+    "host_failure_limit": 16
+  },
+  "byby.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "baby.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "cancer.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "care.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "ek.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "fitness.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "fk.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "food.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "gan.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "gc.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "gk.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "heart.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "man.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "nk.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "pf.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "shen.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "sj.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "tnb.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "wei.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "woman.39.net": {
+    "per_host": 2,
+    "host_interval": 0.5,
+    "retries": 0,
+    "host_failure_limit": 8,
+    "timeout": 20
+  },
+  "vov.vn": {
+    "per_host": 2,
+    "host_interval": 0.35,
+    "retries": 1,
+    "host_failure_limit": 8,
+    "timeout": 25
+  },
+  "www.qdnd.vn": {
+    "per_host": 2,
+    "host_interval": 0.4,
+    "retries": 1,
+    "host_failure_limit": 8,
+    "timeout": 25
+  },
+  "thaythuocvietnam.vn": {
+    "per_host": 2,
+    "host_interval": 0.25,
+    "retries": 0,
+    "host_failure_limit": 8
+  }
+}

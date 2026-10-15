@@ -1,0 +1,18 @@
+# Never commit local runtime/checkpoint trees
+corpus_data/
+corpus_ready/
+corpus_data_vi_en_zh/corpus_part_*.jsonl
+corpus_data_vi_en_zh/pubmed_api_cache/
+competition/models/
+competition/work*/
+.cache/
+.competition_venv/
+.vendor/
+.recovery_vendor/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.npy
+*.pid
+*.lock
+__pycache__/

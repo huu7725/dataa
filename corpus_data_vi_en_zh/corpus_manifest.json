@@ -1,0 +1,612 @@
+{
+  "created_at": "2026-10-13T09:49:26.680552+00:00",
+  "reason": "stopped",
+  "complete": false,
+  "total_unique_ids": 1194469,
+  "counts": {
+    "saved": 1042154,
+    "retryable": 6962,
+    "terminal": 177,
+    "unvisited": 145176
+  },
+  "max_id": 7466161,
+  "source_links": "D:\\R2AI\\links_corpus_vi_en_zh.parquet",
+  "source_fingerprint": {
+    "bytes": 36887910,
+    "mtime_ns": 1791811373722751700
+  },
+  "schema": [
+    "doc_id",
+    "url",
+    "clean_text"
+  ],
+  "shards": [
+    {
+      "file": "corpus_part_0000.jsonl",
+      "bytes": 197129549
+    },
+    {
+      "file": "corpus_part_0001.jsonl",
+      "bytes": 303212179
+    },
+    {
+      "file": "corpus_part_0002.jsonl",
+      "bytes": 289960475
+    },
+    {
+      "file": "corpus_part_0003.jsonl",
+      "bytes": 211805548
+    },
+    {
+      "file": "corpus_part_0004.jsonl",
+      "bytes": 196496088
+    },
+    {
+      "file": "corpus_part_0005.jsonl",
+      "bytes": 253397847
+    },
+    {
+      "file": "corpus_part_0006.jsonl",
+      "bytes": 246793905
+    },
+    {
+      "file": "corpus_part_0007.jsonl",
+      "bytes": 213287064
+    },
+    {
+      "file": "corpus_part_0008.jsonl",
+      "bytes": 196449593
+    },
+    {
+      "file": "corpus_part_0009.jsonl",
+      "bytes": 219328734
+    },
+    {
+      "file": "corpus_part_0010.jsonl",
+      "bytes": 251080517
+    },
+    {
+      "file": "corpus_part_0011.jsonl",
+      "bytes": 207660714
+    },
+    {
+      "file": "corpus_part_0012.jsonl",
+      "bytes": 180576273
+    },
+    {
+      "file": "corpus_part_0013.jsonl",
+      "bytes": 134689103
+    },
+    {
+      "file": "corpus_part_0014.jsonl",
+      "bytes": 89733067
+    },
+    {
+      "file": "corpus_part_0015.jsonl",
+      "bytes": 75957511
+    },
+    {
+      "file": "corpus_part_0016.jsonl",
+      "bytes": 11821296
+    },
+    {
+      "file": "corpus_part_0017.jsonl",
+      "bytes": 143703
+    },
+    {
+      "file": "corpus_part_0018.jsonl",
+      "bytes": 136657
+    },
+    {
+      "file": "corpus_part_0019.jsonl",
+      "bytes": 552070
+    },
+    {
+      "file": "corpus_part_0020.jsonl",
+      "bytes": 434101
+    },
+    {
+      "file": "corpus_part_0021.jsonl",
+      "bytes": 67943964
+    },
+    {
+      "file": "corpus_part_0022.jsonl",
+      "bytes": 71309220
+    },
+    {
+      "file": "corpus_part_0023.jsonl",
+      "bytes": 76542046
+    },
+    {
+      "file": "corpus_part_0024.jsonl",
+      "bytes": 80932641
+    },
+    {
+      "file": "corpus_part_0025.jsonl",
+      "bytes": 69347020
+    },
+    {
+      "file": "corpus_part_0026.jsonl",
+      "bytes": 111236
+    },
+    {
+      "file": "corpus_part_0027.jsonl",
+      "bytes": 143243
+    },
+    {
+      "file": "corpus_part_0028.jsonl",
+      "bytes": 424606
+    },
+    {
+      "file": "corpus_part_0029.jsonl",
+      "bytes": 2827766
+    },
+    {
+      "file": "corpus_part_0030.jsonl",
+      "bytes": 2603674
+    },
+    {
+      "file": "corpus_part_0031.jsonl",
+      "bytes": 1759067
+    },
+    {
+      "file": "corpus_part_0032.jsonl",
+      "bytes": 259573
+    },
+    {
+      "file": "corpus_part_0033.jsonl",
+      "bytes": 3005147
+    },
+    {
+      "file": "corpus_part_0034.jsonl",
+      "bytes": 403573
+    }
+  ],
+  "missing_urls": "missing_urls.jsonl",
+  "hosts": [
+    {
+      "host": "special.vietnamplus.vn",
+      "saved": 1
+    },
+    {
+      "host": "bachmai.gov.vn",
+      "saved": 2769,
+      "retryable": 14
+    },
+    {
+      "host": "baoangiang.com.vn",
+      "saved": 10738
+    },
+    {
+      "host": "baocantho.com.vn",
+      "saved": 12016
+    },
+    {
+      "host": "baochinhphu.vn",
+      "saved": 2301,
+      "terminal": 1
+    },
+    {
+      "host": "baodanang.vn",
+      "saved": 14500
+    },
+    {
+      "host": "baogialai.com.vn",
+      "saved": 3287,
+      "terminal": 3
+    },
+    {
+      "host": "baohaiphong.vn",
+      "saved": 16286
+    },
+    {
+      "host": "baolangson.vn",
+      "saved": 1981
+    },
+    {
+      "host": "baonghean.vn",
+      "saved": 15941
+    },
+    {
+      "host": "baophutho.vn",
+      "saved": 1288
+    },
+    {
+      "host": "baoquangninh.vn",
+      "saved": 2912
+    },
+    {
+      "host": "baoquangtri.vn",
+      "saved": 5483
+    },
+    {
+      "host": "baotayninh.vn",
+      "saved": 1197,
+      "retryable": 1
+    },
+    {
+      "host": "baothanhhoa.vn",
+      "saved": 782
+    },
+    {
+      "host": "baovinhlong.com.vn",
+      "saved": 5113
+    },
+    {
+      "host": "benhviennhitrunguong.gov.vn",
+      "saved": 1200
+    },
+    {
+      "host": "benhvienvietduc.org",
+      "saved": 425
+    },
+    {
+      "host": "dantri.com.vn",
+      "saved": 2063
+    },
+    {
+      "host": "giadinhonline.vn",
+      "saved": 16728,
+      "retryable": 1
+    },
+    {
+      "host": "hanoimoi.vn",
+      "saved": 1283
+    },
+    {
+      "host": "hellobacsi.com",
+      "saved": 11747
+    },
+    {
+      "host": "khoahocphothong.vn",
+      "saved": 8143
+    },
+    {
+      "host": "laodong.vn",
+      "retryable": 96,
+      "saved": 596,
+      "unvisited": 30590
+    },
+    {
+      "host": "medlatec.vn",
+      "saved": 24710,
+      "terminal": 52
+    },
+    {
+      "host": "mega.vietnamplus.vn",
+      "saved": 2
+    },
+    {
+      "host": "nhandan.vn",
+      "saved": 5224,
+      "terminal": 1
+    },
+    {
+      "host": "nhathuoclongchau.com.vn",
+      "retryable": 107,
+      "saved": 543,
+      "unvisited": 78948
+    },
+    {
+      "host": "phunusuckhoe.giadinhonline.vn",
+      "saved": 27577
+    },
+    {
+      "host": "phuyen.baodaklak.vn",
+      "saved": 6252
+    },
+    {
+      "host": "pmc-ecm-healthblog.beta.pharmacity.io",
+      "retryable": 116,
+      "saved": 412,
+      "terminal": 1,
+      "unvisited": 4804
+    },
+    {
+      "host": "suckhoecongdongonline.vn",
+      "saved": 154503
+    },
+    {
+      "host": "suckhoedoisong.vn",
+      "saved": 85822,
+      "retryable": 1
+    },
+    {
+      "host": "suckhoeviet.org.vn",
+      "saved": 5627
+    },
+    {
+      "host": "tamanhhospital.vn",
+      "saved": 4259,
+      "terminal": 2
+    },
+    {
+      "host": "thanhnien.vn",
+      "saved": 72111
+    },
+    {
+      "host": "thaythuocvietnam.vn",
+      "saved": 2835,
+      "retryable": 92
+    },
+    {
+      "host": "tiemchunglongchau.com.vn",
+      "saved": 13277,
+      "terminal": 4
+    },
+    {
+      "host": "tienphong.vn",
+      "saved": 3021
+    },
+    {
+      "host": "tuoitre.vn",
+      "saved": 3893
+    },
+    {
+      "host": "vietnamnet.vn",
+      "saved": 15542,
+      "terminal": 1
+    },
+    {
+      "host": "vnexpress.net",
+      "saved": 2055
+    },
+    {
+      "host": "vov.vn",
+      "retryable": 299,
+      "saved": 502,
+      "unvisited": 8983
+    },
+    {
+      "host": "vov2.vov.vn",
+      "saved": 6899
+    },
+    {
+      "host": "www.pharmacity.vn",
+      "saved": 65,
+      "terminal": 4
+    },
+    {
+      "host": "www.qdnd.vn",
+      "saved": 2852,
+      "retryable": 389,
+      "unvisited": 459
+    },
+    {
+      "host": "www.sggp.org.vn",
+      "saved": 1853
+    },
+    {
+      "host": "www.vietnamplus.vn",
+      "saved": 3695
+    },
+    {
+      "host": "youmed.vn",
+      "saved": 7187,
+      "terminal": 2
+    },
+    {
+      "host": "pubmed.ncbi.nlm.nih.gov",
+      "saved": 239355,
+      "retryable": 645
+    },
+    {
+      "host": "ask.familydoctor.com.cn",
+      "saved": 1
+    },
+    {
+      "host": "baby.39.net",
+      "saved": 34,
+      "retryable": 274,
+      "unvisited": 3060
+    },
+    {
+      "host": "byby.39.net",
+      "saved": 36,
+      "retryable": 1
+    },
+    {
+      "host": "cancer.39.net",
+      "saved": 40,
+      "retryable": 269,
+      "unvisited": 427
+    },
+    {
+      "host": "care.39.net",
+      "saved": 287,
+      "retryable": 263,
+      "unvisited": 732
+    },
+    {
+      "host": "ek.39.net",
+      "saved": 24,
+      "retryable": 260,
+      "unvisited": 164
+    },
+    {
+      "host": "fitness.39.net",
+      "retryable": 169,
+      "saved": 16
+    },
+    {
+      "host": "fk.39.net",
+      "saved": 17,
+      "retryable": 259,
+      "unvisited": 652
+    },
+    {
+      "host": "food.39.net",
+      "saved": 16,
+      "retryable": 262,
+      "unvisited": 316
+    },
+    {
+      "host": "gan.39.net",
+      "saved": 24,
+      "retryable": 257,
+      "unvisited": 13
+    },
+    {
+      "host": "gc.39.net",
+      "saved": 11,
+      "retryable": 48
+    },
+    {
+      "host": "gk.39.net",
+      "saved": 9,
+      "retryable": 81
+    },
+    {
+      "host": "health.people.com.cn",
+      "saved": 50
+    },
+    {
+      "host": "heart.39.net",
+      "saved": 16,
+      "retryable": 225,
+      "unvisited": 814
+    },
+    {
+      "host": "man.39.net",
+      "saved": 11,
+      "retryable": 222,
+      "unvisited": 149
+    },
+    {
+      "host": "nk.39.net",
+      "saved": 11,
+      "retryable": 213,
+      "unvisited": 538
+    },
+    {
+      "host": "pf.39.net",
+      "saved": 8,
+      "retryable": 77
+    },
+    {
+      "host": "qihuangzhishu.com",
+      "saved": 29
+    },
+    {
+      "host": "qy.familydoctor.com.cn",
+      "saved": 2
+    },
+    {
+      "host": "shen.39.net",
+      "saved": 8,
+      "retryable": 210,
+      "unvisited": 107
+    },
+    {
+      "host": "sj.39.net",
+      "saved": 28,
+      "retryable": 167,
+      "unvisited": 2
+    },
+    {
+      "host": "tnb.39.net",
+      "saved": 8,
+      "retryable": 197,
+      "unvisited": 512
+    },
+    {
+      "host": "wei.39.net",
+      "retryable": 194,
+      "saved": 5,
+      "unvisited": 26
+    },
+    {
+      "host": "woman.39.net",
+      "saved": 7,
+      "retryable": 193,
+      "unvisited": 487
+    },
+    {
+      "host": "www.120ask.com",
+      "saved": 95621,
+      "terminal": 9,
+      "retryable": 211,
+      "unvisited": 2319
+    },
+    {
+      "host": "www.cnkang.com",
+      "saved": 40029,
+      "retryable": 6,
+      "terminal": 11
+    },
+    {
+      "host": "www.wujue.com",
+      "saved": 708
+    },
+    {
+      "host": "www.zydcd.com",
+      "saved": 204
+    },
+    {
+      "host": "article.iiyi.com",
+      "retryable": 154,
+      "unvisited": 575
+    },
+    {
+      "host": "ask.39.net",
+      "saved": 27880,
+      "retryable": 834,
+      "unvisited": 4058
+    },
+    {
+      "host": "baidianfeng.familydoctor.com.cn",
+      "saved": 60
+    },
+    {
+      "host": "bingli.iiyi.com",
+      "retryable": 5
+    },
+    {
+      "host": "jb39.com",
+      "saved": 527
+    },
+    {
+      "host": "jbk.39.net",
+      "saved": 2033
+    },
+    {
+      "host": "test.pmphai.com",
+      "saved": 2989
+    },
+    {
+      "host": "www.a-hospital.com",
+      "saved": 4701
+    },
+    {
+      "host": "www.baidu.com",
+      "saved": 11
+    },
+    {
+      "host": "www.familydoctor.cn",
+      "saved": 2
+    },
+    {
+      "host": "www.familydoctor.com.cn",
+      "saved": 26819
+    },
+    {
+      "host": "www.msdmanuals.cn",
+      "saved": 836,
+      "terminal": 69
+    },
+    {
+      "host": "www.youlai.cn",
+      "saved": 4122,
+      "terminal": 17
+    },
+    {
+      "host": "zhongyibaodian.net",
+      "saved": 6061
+    },
+    {
+      "host": "zysjonline.com",
+      "retryable": 150,
+      "unvisited": 6441
+    }
+  ]
+}

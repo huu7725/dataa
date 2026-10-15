@@ -1,0 +1,49 @@
+{
+  "embedding": {
+    "model_id": "BAAI/bge-m3",
+    "revision": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+    "published_at": "2024-01-27T17:07:29+00:00",
+    "revision_at": "2024-04-02T13:03:35+00:00",
+    "parameter_count": 567754752,
+    "parameter_evidence": "evidence/bge-m3-safetensors-header.json",
+    "public_url": "https://huggingface.co/BAAI/bge-m3",
+    "weights_file": "model.safetensors",
+    "weights_sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+    "dimension": 1024,
+    "backend": "torch",
+    "pooling": "cls",
+    "query_prefix": "",
+    "passage_prefix": ""
+  },
+  "reranker": {
+    "model_id": "BAAI/bge-reranker-v2-m3",
+    "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "published_at": "2024-03-15T13:32:18+00:00",
+    "revision_at": "2024-06-24T14:08:45+00:00",
+    "parameter_count": 567755777,
+    "parameter_evidence": "evidence/BAAI--bge-reranker-v2-m3--revision.json",
+    "public_url": "https://huggingface.co/BAAI/bge-reranker-v2-m3",
+    "weights_file": "model.safetensors",
+    "weights_sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+    "backend": "torch",
+    "role": "reranker"
+  },
+  "languages": [
+    "English",
+    "Chinese",
+    "Vietnamese distractor"
+  ],
+  "cosine_scores": [
+    0.5419137477874756,
+    0.5546311140060425,
+    0.4536232054233551
+  ],
+  "reranker_logits": [
+    -1.525390625,
+    0.01194000244140625,
+    -11.03125
+  ],
+  "english_chinese_relevance_above_distractor": true,
+  "fixture_only": true,
+  "competition_score": null
+}

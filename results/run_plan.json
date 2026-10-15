@@ -1,0 +1,51 @@
+{
+  "request": "Stop crawling; process frozen corpus, train and build the competition system.",
+  "source_manifest_sha256": "63e30871a4f61f3d549c37a7b4f57a1468e4832ffe3321eb6b37ec102e6c03f3",
+  "saved_documents": 1041242,
+  "missing_ids": 153227,
+  "corpus_audit_valid": true,
+  "query_count": 1200,
+  "models": [
+    {
+      "model_id": "BAAI/bge-m3",
+      "revision": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+      "published_at": "2024-01-27T17:07:29+00:00",
+      "revision_at": "2024-04-02T13:03:35+00:00",
+      "parameter_count": 567754752,
+      "parameter_evidence": "evidence/bge-m3-safetensors-header.json",
+      "public_url": "https://huggingface.co/BAAI/bge-m3",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+      "dimension": 1024,
+      "backend": "torch",
+      "pooling": "cls",
+      "query_prefix": "",
+      "passage_prefix": ""
+    },
+    {
+      "model_id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "published_at": "2024-03-15T13:32:18+00:00",
+      "revision_at": "2024-06-24T14:08:45+00:00",
+      "parameter_count": 567755777,
+      "parameter_evidence": "evidence/BAAI--bge-reranker-v2-m3--revision.json",
+      "public_url": "https://huggingface.co/BAAI/bge-reranker-v2-m3",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+      "backend": "torch",
+      "role": "reranker"
+    }
+  ],
+  "training": {
+    "mode": "inverse_cloze_diagonal",
+    "examples_per_language": 512,
+    "seed": 20261013,
+    "epochs": 15,
+    "learning_rate": 0.02
+  },
+  "closed_model_used": false,
+  "generated_chunks": false,
+  "competition_metrics": null,
+  "pipeline_status": "pipeline_status.json",
+  "submission_when_complete": "submission.zip"
+}

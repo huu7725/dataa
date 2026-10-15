@@ -1,0 +1,329 @@
+{
+  "_id": "65b53851e602b6c2c96e78da",
+  "id": "BAAI/bge-m3",
+  "private": false,
+  "pipeline_tag": "sentence-similarity",
+  "library_name": "sentence-transformers",
+  "tags": [
+    "sentence-transformers",
+    "pytorch",
+    "safetensors",
+    "xlm-roberta",
+    "feature-extraction",
+    "sentence-similarity",
+    "arxiv:2402.03216",
+    "arxiv:2004.04906",
+    "arxiv:2106.14807",
+    "arxiv:2107.05720",
+    "arxiv:2004.12832",
+    "license:mit",
+    "eval-results",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "deploy:sagemaker",
+    "deploy:azure",
+    "region:us"
+  ],
+  "downloads": 32850245,
+  "likes": 3844,
+  "modelId": "BAAI/bge-m3",
+  "author": "BAAI",
+  "sha": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+  "lastModified": "2024-04-02T13:03:35.000Z",
+  "gated": false,
+  "disabled": false,
+  "mask_token": "<mask>",
+  "widgetData": [
+    {
+      "source_sentence": "That is a happy person",
+      "sentences": [
+        "That is a happy dog",
+        "That is a very happy person",
+        "Today is a sunny day"
+      ]
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "XLMRobertaModel"
+    ],
+    "model_type": "xlm-roberta",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "cls_token": "<s>",
+      "eos_token": "</s>",
+      "mask_token": {
+        "__type": "AddedToken",
+        "content": "<mask>",
+        "lstrip": true,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": false
+      },
+      "pad_token": "<pad>",
+      "sep_token": "</s>",
+      "unk_token": "<unk>"
+    }
+  },
+  "cardData": {
+    "pipeline_tag": "sentence-similarity",
+    "tags": [
+      "sentence-transformers",
+      "feature-extraction",
+      "sentence-similarity"
+    ],
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "size": 1570
+    },
+    {
+      "rfilename": "1_Pooling/config.json",
+      "blobId": "9bd85925f325e25246d94c4918dc02ab98f2a1b7",
+      "size": 191
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "9382959dd1bc35d31aadcad28c0129a9e6258969",
+      "size": 14955
+    },
+    {
+      "rfilename": "colbert_linear.pt",
+      "blobId": "4a8e5127e62c8cbb2cb5a37a3cb34b27b2dfc3aa",
+      "size": 2100674,
+      "lfs": {
+        "sha256": "19bfbae397c2b7524158c919d0e9b19393c5639d098f0a66932c91ed8f5f9abb",
+        "size": 2100674,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "e6eda1c72da8f9dc30fdd9b69c73d35af3b7a7ad",
+      "size": 687
+    },
+    {
+      "rfilename": "config_sentence_transformers.json",
+      "blobId": "1fba91c78a6c8e17227058ab6d4d3acb5d8630a9",
+      "size": 123
+    },
+    {
+      "rfilename": "imgs/.DS_Store",
+      "blobId": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148
+    },
+    {
+      "rfilename": "imgs/bm25.jpg",
+      "blobId": "5b139085584a14124382ff9f20a12b351d8f02d0",
+      "size": 68964
+    },
+    {
+      "rfilename": "imgs/long.jpg",
+      "blobId": "5121bd05ddd5b58e69f1dd62ae82117a40144ab5",
+      "size": 485432
+    },
+    {
+      "rfilename": "imgs/miracl.jpg",
+      "blobId": "8505a10b1dc9342d8afc122c0774148b0f3644ac",
+      "size": 447641
+    },
+    {
+      "rfilename": "imgs/mkqa.jpg",
+      "blobId": "6607ac85da86583bd4fe91d3b9ec58a76feb220e",
+      "size": 608027
+    },
+    {
+      "rfilename": "imgs/nqa.jpg",
+      "blobId": "bf983404739ed8b859d15e5586bdcdf731d3caa0",
+      "size": 158358
+    },
+    {
+      "rfilename": "imgs/others.webp",
+      "blobId": "58e7f9981380794db1df4334707539f180b0035e",
+      "size": 20984
+    },
+    {
+      "rfilename": "long.jpg",
+      "blobId": "3435de26618499e8381cd414025410991c3a97bd",
+      "size": 126894
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "62bb30179934c909cae02ef7816f24a07cd87a8f",
+      "size": 2271064456,
+      "lfs": {
+        "sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+        "size": 2271064456,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "modules.json",
+      "blobId": "952a9b81c0bfd99800fabf352f69c7ccd46c5e43",
+      "size": 349
+    },
+    {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "88e71f33b1af45aa960f3fbf6883edc6f014452a",
+      "size": 2271145830,
+      "lfs": {
+        "sha256": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38",
+        "size": 2271145830,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "sentence_bert_config.json",
+      "blobId": "0140ba1eac83a3c9b857d64baba91969d988624b",
+      "size": 54
+    },
+    {
+      "rfilename": "sentencepiece.bpe.model",
+      "blobId": "7a3f40a75f870bc1f21700cd414dc2acc431583c",
+      "size": 5069051,
+      "lfs": {
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "size": 5069051,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "sparse_linear.pt",
+      "blobId": "19175a7f93e1a1f8b98d5f5f367062d9bd287d87",
+      "size": 3516,
+      "lfs": {
+        "sha256": "45c93804d2142b8f6d7ec6914ae23a1eee9c6a1d27d83d908a20d2afb3595ad9",
+        "size": 3516,
+        "pointerSize": 129
+      }
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "b1879d702821e753ffe4245048eee415d54a9385",
+      "size": 964
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "c8fd8778874b9aa8bdafaa3bbd760f236d237dd6",
+      "size": 17098108,
+      "lfs": {
+        "sha256": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+        "size": 17098108,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "dc69ac559dcba2694012009aaa108c614541789a",
+      "size": 444
+    }
+  ],
+  "spaces": [
+    "tardellirs/model-pulse",
+    "mteb/leaderboard",
+    "embedl/hfviewer",
+    "SAkizuki/DanbooruSearch",
+    "MTEB-BR/leaderboard",
+    "SAkizuki/WenQiuYue",
+    "Becher-zribi/prompt-forge-rag",
+    "Haniki/epi-scout-backend",
+    "Farenrait/thebridge-matching",
+    "mteb/leaderboard_legacy",
+    "hakari-bench/leaderboard",
+    "panuthept/thai_sentence_embedding_benchmark",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "antoinelouis/mtem-pruner",
+    "alienet/BookWorld",
+    "lightmate/llm-chatbot",
+    "kaengreg/rusBEIR",
+    "davanstrien/prelinger-moments-space",
+    "Clarymind/BAAI-bge-m3",
+    "SmileXing/leaderboard",
+    "jaymeen1405/text2sql-ai-agent",
+    "TheJimmy/ai-builder-bookIdentifier-HF",
+    "NaikPriyank/ConvoTrack",
+    "denniscraandijk/mtem-pruner",
+    "aihuashanying/aileeao",
+    "Agents-MCP-Hackathon/DocuCite-Agent",
+    "ZalzalaKhan/disaster-rag",
+    "Chris4K/Layers",
+    "GiacomoDeLuca/orrery-demo",
+    "sergeyzh/rusBEIR-lite",
+    "saja55/smart-advisor",
+    "anpigon/law-bot",
+    "universalsoftware/uchat",
+    "Someshfengde/Visualized_BGE_demo",
+    "XiaoxiongLee/D2Cell-chatbot",
+    "evgensoft/baai-m3",
+    "Shriharshan/Autism-RAG",
+    "ipepe/nomic-embeddings",
+    "ChatVLD/CHATVLD",
+    "XiaoxiongLee/D2Cell_chatbot",
+    "ahmedsaeed2515/AgriRAG-API",
+    "amryassin/embedding-bench",
+    "ridhimagarg23/pdf-intelligence-assistant",
+    "Abdelrahman023/edu-egypt",
+    "abalanescu/flow2",
+    "SujonPro24/sentence_similairty",
+    "TheDrakosfire/RuleLawyer",
+    "anpigon/langchain-qa-bot",
+    "rishisim/aiotsmartlabs-assistant",
+    "LISA-Kadi/LISA-demo",
+    "AminFaraji/SecondSpace",
+    "Yadanar1010/athena-ai-programming-mentor",
+    "opex792/MoviesSemanticSearch",
+    "opex792/MoviesSemanticSearchBgeM3",
+    "opex792/MoviesSemanticSearchTesting",
+    "opex792/MoviesSemanticSearchTesting2",
+    "BSC-LT/hotel_tools",
+    "xeoyeon/WhyFi",
+    "ItzRoBeerT/WAIter",
+    "AidenMcC/rf-drill-labeler",
+    "al1kss/safetyAI",
+    "LKTs/CafeAgentX",
+    "vinimoreira/RAG_backend",
+    "kxm1k4m1/bge-m3",
+    "NLG01/chatbot_aivancity",
+    "lolo1809/ChatBot",
+    "drwlf/medical-pdf-ingestion",
+    "hieuailearning/BAAI_bge_m3_api",
+    "Oussama-TH/Ai_mate",
+    "Erik1998/CvRag",
+    "chouchouvs/DeepIndex",
+    "akryldigital/audit_assistant",
+    "akage99/article-model-digifeed",
+    "LibrAI/uae-kb",
+    "realdexter/RepoReaper",
+    "akage99/article-classifier-vectordb",
+    "necajesus/lexclara-chatbot",
+    "Abdulrhmanalatab/text_summrization",
+    "paradism/kigam-regulation",
+    "AmbitiousPotato/SingaporeAiBackend",
+    "AshJem/Nolej",
+    "Sliverboy/heal-her-backend",
+    "Om-2003/steam-game-search-ui",
+    "Vanshcc/RamayanaOg",
+    "masterzhan/zhehelima",
+    "crgmail/bge",
+    "omark3405/boss-restaurant-chat",
+    "GabeA/chatbench-leaderboard",
+    "ahmedsaeed111/AgriRAG_Pro",
+    "doniyor117/yurika-backend",
+    "bqtankiet/travel-chatbot",
+    "H-Salah/online-efteely",
+    "saadimam/Basketball-RAG",
+    "anwarkxc/trackademi",
+    "wathoresanket/multimodal-semantic-pricing",
+    "amrit55555/neural-rag-explorer",
+    "profsuccofrutta/ai-act-advisor",
+    "Hygroskopisch/ifc-kbob-ai-matcher",
+    "Manar13/Yusr-Hajj-API",
+    "driodnexus/droidnexus-labs-hub"
+  ],
+  "createdAt": "2024-01-27T17:07:29.000Z",
+  "usedStorage": 13704659878
+}

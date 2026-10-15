@@ -1,0 +1,763 @@
+{
+  "model": {
+    "_id": "65b53851e602b6c2c96e78da",
+    "id": "BAAI/bge-m3",
+    "private": false,
+    "pipeline_tag": "sentence-similarity",
+    "library_name": "sentence-transformers",
+    "tags": [
+      "sentence-transformers",
+      "pytorch",
+      "onnx",
+      "xlm-roberta",
+      "feature-extraction",
+      "sentence-similarity",
+      "arxiv:2402.03216",
+      "arxiv:2004.04906",
+      "arxiv:2106.14807",
+      "arxiv:2107.05720",
+      "arxiv:2004.12832",
+      "license:mit",
+      "eval-results",
+      "text-embeddings-inference",
+      "endpoints_compatible",
+      "deploy:sagemaker",
+      "deploy:azure",
+      "region:us"
+    ],
+    "downloads": 32850245,
+    "likes": 3844,
+    "modelId": "BAAI/bge-m3",
+    "author": "BAAI",
+    "sha": "5617a9f61b028005a4858fdac845db406aefb181",
+    "lastModified": "2024-07-03T14:50:10.000Z",
+    "gated": false,
+    "disabled": false,
+    "mask_token": "<mask>",
+    "widgetData": [
+      {
+        "source_sentence": "That is a happy person",
+        "sentences": [
+          "That is a happy dog",
+          "That is a very happy person",
+          "Today is a sunny day"
+        ]
+      }
+    ],
+    "model-index": null,
+    "config": {
+      "architectures": [
+        "XLMRobertaModel"
+      ],
+      "model_type": "xlm-roberta",
+      "tokenizer_config": {
+        "bos_token": "<s>",
+        "cls_token": "<s>",
+        "eos_token": "</s>",
+        "mask_token": {
+          "__type": "AddedToken",
+          "content": "<mask>",
+          "lstrip": true,
+          "normalized": true,
+          "rstrip": false,
+          "single_word": false
+        },
+        "pad_token": "<pad>",
+        "sep_token": "</s>",
+        "unk_token": "<unk>"
+      }
+    },
+    "cardData": {
+      "pipeline_tag": "sentence-similarity",
+      "tags": [
+        "sentence-transformers",
+        "feature-extraction",
+        "sentence-similarity"
+      ],
+      "license": "mit"
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "1_Pooling/config.json"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "colbert_linear.pt"
+      },
+      {
+        "rfilename": "config.json"
+      },
+      {
+        "rfilename": "config_sentence_transformers.json"
+      },
+      {
+        "rfilename": "imgs/.DS_Store"
+      },
+      {
+        "rfilename": "imgs/bm25.jpg"
+      },
+      {
+        "rfilename": "imgs/long.jpg"
+      },
+      {
+        "rfilename": "imgs/miracl.jpg"
+      },
+      {
+        "rfilename": "imgs/mkqa.jpg"
+      },
+      {
+        "rfilename": "imgs/nqa.jpg"
+      },
+      {
+        "rfilename": "imgs/others.webp"
+      },
+      {
+        "rfilename": "long.jpg"
+      },
+      {
+        "rfilename": "modules.json"
+      },
+      {
+        "rfilename": "onnx/Constant_7_attr__value"
+      },
+      {
+        "rfilename": "onnx/config.json"
+      },
+      {
+        "rfilename": "onnx/model.onnx"
+      },
+      {
+        "rfilename": "onnx/model.onnx_data"
+      },
+      {
+        "rfilename": "onnx/sentencepiece.bpe.model"
+      },
+      {
+        "rfilename": "onnx/special_tokens_map.json"
+      },
+      {
+        "rfilename": "onnx/tokenizer.json"
+      },
+      {
+        "rfilename": "onnx/tokenizer_config.json"
+      },
+      {
+        "rfilename": "pytorch_model.bin"
+      },
+      {
+        "rfilename": "sentence_bert_config.json"
+      },
+      {
+        "rfilename": "sentencepiece.bpe.model"
+      },
+      {
+        "rfilename": "sparse_linear.pt"
+      },
+      {
+        "rfilename": "special_tokens_map.json"
+      },
+      {
+        "rfilename": "tokenizer.json"
+      },
+      {
+        "rfilename": "tokenizer_config.json"
+      }
+    ],
+    "spaces": [
+      "tardellirs/model-pulse",
+      "mteb/leaderboard",
+      "embedl/hfviewer",
+      "SAkizuki/DanbooruSearch",
+      "MTEB-BR/leaderboard",
+      "SAkizuki/WenQiuYue",
+      "Becher-zribi/prompt-forge-rag",
+      "Haniki/epi-scout-backend",
+      "Farenrait/thebridge-matching",
+      "mteb/leaderboard_legacy",
+      "hakari-bench/leaderboard",
+      "panuthept/thai_sentence_embedding_benchmark",
+      "eduagarcia/multilingual-tokenizer-leaderboard",
+      "antoinelouis/mtem-pruner",
+      "alienet/BookWorld",
+      "lightmate/llm-chatbot",
+      "kaengreg/rusBEIR",
+      "davanstrien/prelinger-moments-space",
+      "Clarymind/BAAI-bge-m3",
+      "SmileXing/leaderboard",
+      "jaymeen1405/text2sql-ai-agent",
+      "TheJimmy/ai-builder-bookIdentifier-HF",
+      "NaikPriyank/ConvoTrack",
+      "denniscraandijk/mtem-pruner",
+      "aihuashanying/aileeao",
+      "Agents-MCP-Hackathon/DocuCite-Agent",
+      "ZalzalaKhan/disaster-rag",
+      "Chris4K/Layers",
+      "GiacomoDeLuca/orrery-demo",
+      "sergeyzh/rusBEIR-lite",
+      "saja55/smart-advisor",
+      "anpigon/law-bot",
+      "universalsoftware/uchat",
+      "Someshfengde/Visualized_BGE_demo",
+      "XiaoxiongLee/D2Cell-chatbot",
+      "evgensoft/baai-m3",
+      "Shriharshan/Autism-RAG",
+      "ipepe/nomic-embeddings",
+      "ChatVLD/CHATVLD",
+      "XiaoxiongLee/D2Cell_chatbot",
+      "ahmedsaeed2515/AgriRAG-API",
+      "amryassin/embedding-bench",
+      "ridhimagarg23/pdf-intelligence-assistant",
+      "Abdelrahman023/edu-egypt",
+      "abalanescu/flow2",
+      "SujonPro24/sentence_similairty",
+      "TheDrakosfire/RuleLawyer",
+      "anpigon/langchain-qa-bot",
+      "rishisim/aiotsmartlabs-assistant",
+      "LISA-Kadi/LISA-demo",
+      "AminFaraji/SecondSpace",
+      "Yadanar1010/athena-ai-programming-mentor",
+      "opex792/MoviesSemanticSearch",
+      "opex792/MoviesSemanticSearchBgeM3",
+      "opex792/MoviesSemanticSearchTesting",
+      "opex792/MoviesSemanticSearchTesting2",
+      "BSC-LT/hotel_tools",
+      "xeoyeon/WhyFi",
+      "ItzRoBeerT/WAIter",
+      "AidenMcC/rf-drill-labeler",
+      "al1kss/safetyAI",
+      "LKTs/CafeAgentX",
+      "vinimoreira/RAG_backend",
+      "kxm1k4m1/bge-m3",
+      "NLG01/chatbot_aivancity",
+      "lolo1809/ChatBot",
+      "drwlf/medical-pdf-ingestion",
+      "hieuailearning/BAAI_bge_m3_api",
+      "Oussama-TH/Ai_mate",
+      "Erik1998/CvRag",
+      "chouchouvs/DeepIndex",
+      "akryldigital/audit_assistant",
+      "akage99/article-model-digifeed",
+      "LibrAI/uae-kb",
+      "realdexter/RepoReaper",
+      "akage99/article-classifier-vectordb",
+      "necajesus/lexclara-chatbot",
+      "Abdulrhmanalatab/text_summrization",
+      "paradism/kigam-regulation",
+      "AmbitiousPotato/SingaporeAiBackend",
+      "AshJem/Nolej",
+      "Sliverboy/heal-her-backend",
+      "Om-2003/steam-game-search-ui",
+      "Vanshcc/RamayanaOg",
+      "masterzhan/zhehelima",
+      "crgmail/bge",
+      "omark3405/boss-restaurant-chat",
+      "GabeA/chatbench-leaderboard",
+      "ahmedsaeed111/AgriRAG_Pro",
+      "doniyor117/yurika-backend",
+      "bqtankiet/travel-chatbot",
+      "H-Salah/online-efteely",
+      "saadimam/Basketball-RAG",
+      "anwarkxc/trackademi",
+      "wathoresanket/multimodal-semantic-pricing",
+      "amrit55555/neural-rag-explorer",
+      "profsuccofrutta/ai-act-advisor",
+      "Hygroskopisch/ifc-kbob-ai-matcher",
+      "Manar13/Yusr-Hajj-API",
+      "driodnexus/droidnexus-labs-hub"
+    ],
+    "createdAt": "2024-01-27T17:07:29.000Z",
+    "inference": "warm",
+    "usedStorage": 13704659878
+  },
+  "commits": [
+    {
+      "id": "5617a9f61b028005a4858fdac845db406aefb181",
+      "title": "Update MIRACL evaluation results of BGE-M3 (#67)",
+      "message": "\n\n\n- Update MIRACL evaluation results of BGE-M3 (be9f7f99731dba86ab44550821489908ef3b4baa)\n\n\nCo-authored-by: Jianlv Chen <hanhainebula@users.noreply.huggingface.co>\n",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        },
+        {
+          "user": "hanhainebula",
+          "avatar": "/avatars/574114921e340dcd340f741d7728e4e8.svg"
+        }
+      ],
+      "date": "2024-07-03T14:50:10.000Z"
+    },
+    {
+      "id": "e1f456861c4ba62db1cf7fc31093d04e66b5040f",
+      "title": "Update MIRACL evaluation results (#68)",
+      "message": "\n\n\n- Update MIRACL evaluation results (0c6f0d0ea8f284b9070c3ffaa50677440943f984)\n\n\nCo-authored-by: Jianlv Chen <hanhainebula@users.noreply.huggingface.co>\n",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        },
+        {
+          "user": "hanhainebula",
+          "avatar": "/avatars/574114921e340dcd340f741d7728e4e8.svg"
+        }
+      ],
+      "date": "2024-07-02T15:13:57.000Z"
+    },
+    {
+      "id": "babcf60cae0a1f438d7ade582983d4ba462303c2",
+      "title": "Adding ONNX file of this model (#44)",
+      "message": "\n\n\n- Adding ONNX file of this model (6a3fd5fa10d7c4e4fabeace29e36b2bfa76d45d5)\n\n\nCo-authored-by: Yash <yashvardhan7@users.noreply.huggingface.co>\n",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        },
+        {
+          "user": "yashvardhan7",
+          "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65f49a96b97a85ae9d607715/GCa2sulTjDCQsGYo2IZv-.jpeg"
+        }
+      ],
+      "date": "2024-04-13T13:01:41.000Z"
+    },
+    {
+      "id": "c400e3d69da76ed1965ea6ed67c83af69c3ff3a4",
+      "title": "Delete model.safetensors",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-04-02T14:01:45.000Z"
+    },
+    {
+      "id": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+      "title": "Delete bge-m3-with-deocder",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-04-02T13:03:35.000Z"
+    },
+    {
+      "id": "80087bf0b7876bc948d3b5677706633f6c795fa2",
+      "title": "Upload bge-m3-with-deocder/pytorch_model.bin with huggingface_hub",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-04-02T12:53:42.000Z"
+    },
+    {
+      "id": "50f9396f75618b3389c1fd1068a1ff58dc7b5b26",
+      "title": "Update tokenizer_config.json",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-03-26T02:54:48.000Z"
+    },
+    {
+      "id": "5a212480c9a75bb651bcb894978ed409e4c47b82",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-03-20T14:21:50.000Z"
+    },
+    {
+      "id": "cab5a405d24c03c7e140520debf57df150573c42",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-03-19T13:32:16.000Z"
+    },
+    {
+      "id": "ecbfce391cde1c114da10d440f63acb77a67460b",
+      "title": "Upload others.webp",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-03-08T04:46:52.000Z"
+    },
+    {
+      "id": "2ab44ec5c6ffa948890dcd605b723be45690d220",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-03-08T04:45:37.000Z"
+    },
+    {
+      "id": "3641912a2b1366e8ee92fbdad6aa2abd45234114",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-03-02T12:28:04.000Z"
+    },
+    {
+      "id": "3ab7155aa9b89ac532b2f2efcc3f136766b91025",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-11T12:33:00.000Z"
+    },
+    {
+      "id": "f2dfce09deeca40c22a077011d79c58bfe65c4fd",
+      "title": "Upload bm25.jpg",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-11T12:27:51.000Z"
+    },
+    {
+      "id": "cfdb103bd8e9d993a97dfde2433292368b7b8c73",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-11T12:26:49.000Z"
+    },
+    {
+      "id": "aa47896ffac4b6b12462ed5996026099bfcea267",
+      "title": "Upload 5 files",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-08T18:05:31.000Z"
+    },
+    {
+      "id": "6d44202115bda4a708c603c4ffc7bbb7c103cf93",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-08T18:04:27.000Z"
+    },
+    {
+      "id": "2d5552fc4cb25342edfb99af16493658a858a12a",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-07T18:19:54.000Z"
+    },
+    {
+      "id": "3c54f5a41ea5ec7b438a0e7db3a48325494d8694",
+      "title": "Upload long.jpg",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-06T08:49:03.000Z"
+    },
+    {
+      "id": "96e9e917014f87e9a196924c6b6bb16121faa285",
+      "title": "Upload long.jpg",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-06T08:48:13.000Z"
+    },
+    {
+      "id": "5cedd825962c56713204cc8fa678da1d9e99539f",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-06T08:47:26.000Z"
+    },
+    {
+      "id": "f11a3f18ef0f9740f5268d633d025d11b33e1e82",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-06T08:18:30.000Z"
+    },
+    {
+      "id": "8017dbb41d5ac92745a116bad86a16274e4f3ea7",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-05T06:26:15.000Z"
+    },
+    {
+      "id": "d5ab3da48ec596cd78a50b27e52c7211b49d870f",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-05T06:25:31.000Z"
+    },
+    {
+      "id": "4277867103fc67328e2033176de4387b85e9960f",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-01T16:39:36.000Z"
+    },
+    {
+      "id": "1f5d3ac2e10569f089a92959f4dd7a051c73dba2",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-01T15:06:56.000Z"
+    },
+    {
+      "id": "a12bcd780a35568b0f3dc7c16da902622fe6af0f",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-01T09:09:40.000Z"
+    },
+    {
+      "id": "053722828b8a25df8a825be6938d58ab19f2c2f7",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-02-01T03:00:04.000Z"
+    },
+    {
+      "id": "3806044eb869c8756693584f7eb5dd04ab2bdd95",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-31T17:31:43.000Z"
+    },
+    {
+      "id": "84790c1a606f60d06c6932e4ecdd174b466d84ac",
+      "title": "Upload nqa.jpg",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-31T17:30:17.000Z"
+    },
+    {
+      "id": "73a15ad29ab604f3bdc31601849a9defe86d563f",
+      "title": "Add model seq_len and dimensions to the README.md (#1)",
+      "message": "\n\n\n- Add model seq_len and dimensions to the README.md (038773d84178649586cfdf228df3e2a0838a5180)\n\n\nCo-authored-by: RAFAEL SANTOS SILVA <xfalcox@users.noreply.huggingface.co>\n",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        },
+        {
+          "user": "xfalcox",
+          "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63d492b1df01ef426a0dea4b/OEUQDxcjvzc_4efdGwWtm.jpeg"
+        }
+      ],
+      "date": "2024-01-31T01:59:23.000Z"
+    },
+    {
+      "id": "ede10a3053daddbbaf9feaa8e1cc14185e7a9f6b",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-29T17:54:30.000Z"
+    },
+    {
+      "id": "ecf34d3096437e53f2c163f370b4135980d2e024",
+      "title": "Upload 3 files",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-29T12:34:13.000Z"
+    },
+    {
+      "id": "3c06a359c08b8c49f1cab07e3eac8f846eb3a038",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-29T12:33:18.000Z"
+    },
+    {
+      "id": "694b61558aea4ae2512ed8d0e189d5cf8adc2259",
+      "title": "Update README.md",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-28T11:09:39.000Z"
+    },
+    {
+      "id": "b28ce2a6fcc9c75ef1c0619575d0ec19af760082",
+      "title": "Update config.json",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-28T11:04:11.000Z"
+    },
+    {
+      "id": "3069def033ce91d907258f9a830e442610dbfe0b",
+      "title": "Upload tokenizer.json",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-28T10:38:09.000Z"
+    },
+    {
+      "id": "29fbe26ba08e5b2a5f06bac3632195bc85d3d690",
+      "title": "upload",
+      "message": "\n",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-28T10:36:42.000Z"
+    },
+    {
+      "id": "41cc50fc831ed29ad4124d153dc3a132abf26101",
+      "title": "initial commit",
+      "message": "",
+      "authors": [
+        {
+          "user": "Shitao",
+          "avatar": "/avatars/c0675d05a52192ee14e9ab1633353956.svg"
+        }
+      ],
+      "date": "2024-01-27T17:07:29.000Z"
+    }
+  ]
+}

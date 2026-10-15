@@ -1,0 +1,18 @@
+{
+  "previous_fingerprint": "fabac91e2295d69560b45b4b4ad6c8265cb3822abad6c3d7e8e8cfd276777f9f",
+  "current_fingerprint": "f6ea22b7a849660e87e9b8a6e75eeb2202496e7d4adf39b6df512c509bdfbadd",
+  "previous_manifest_sha256": "6ac3d83d2985571656a64892d4a215bd85030e786ecf50c6be5f50b61f3d8e0e",
+  "new_manifest_sha256": "63e30871a4f61f3d549c37a7b4f57a1468e4832ffe3321eb6b37ec102e6c03f3",
+  "previous_saved": 1039588,
+  "new_saved": 1041242,
+  "verified_indexed_documents": 250768,
+  "verified_shards_sha256": {
+    "corpus_part_0000.jsonl": "9288a3b749365dfb91c5e2ee9e2a82fa264cd70a3eb74b9e4a7765e0f781cb9d",
+    "corpus_part_0001.jsonl": "467d13eabbd127f24b715d978d5bf6a41809eef69de5a26a994e0ae4ed0890ad",
+    "corpus_part_0002.jsonl": "60a5a37a86f54197401acb4cce640cf59d6fd43f1fdaad0ffb19fdafb2d0209d",
+    "corpus_part_0003.jsonl": "90841758d7ab1ecf1481331219c74449b1a1dbc1c16a3c9a4fa16efd6eb2e191",
+    "corpus_part_0004.jsonl": "bbfeaa084829628779ca0ba2c27e7c40ecebd2542d4c64fce1cc782fc2f0499e",
+    "corpus_part_0005.jsonl": "3fa0a5ba5c8fa691e14af2a7a695aded2cdcdbcb6ace81db63fdbb1c9f11ddd4"
+  },
+  "validation": "Every imported original ID, URL and full source text matched the current frozen JSONL prefix; tokenizer and links unchanged."
+}

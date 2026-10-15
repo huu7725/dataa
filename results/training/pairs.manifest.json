@@ -1,0 +1,24 @@
+{
+  "dataset_type": "inverse-cloze weak same-document pairs",
+  "source_manifest": "D:\\R2AI\\corpus_data_vi_en_zh\\corpus_manifest.json",
+  "source_manifest_sha256": "63e30871a4f61f3d549c37a7b4f57a1468e4832ffe3321eb6b37ec102e6c03f3",
+  "source_links_sha256": "9e34cb4b7d6424b80ed2634ada581ea9e2d97da69c245d80bdbb31413a78e8ce",
+  "source_url": "https://huggingface.co/datasets/AIGuruTinix/ViBioMIR",
+  "external_training_data": [],
+  "competition_queries_used": false,
+  "reference_labels_used": false,
+  "generated_text_used": false,
+  "scanned_documents": 1041242,
+  "pairs": 1536,
+  "counts": {
+    "vi/train": 424,
+    "vi/validation": 88,
+    "en/validation": 99,
+    "en/train": 413,
+    "zh/train": 395,
+    "zh/validation": 117
+  },
+  "sha256": "dace26240992237fbf8690d1d28a6324fce1ee79160709dc335a048fe983c9a4",
+  "seed": 20261013,
+  "limitation": "Weak same-document contexts can be noisy; validation is monolingual and cannot establish cross-language F2 or leaderboard score."
+}

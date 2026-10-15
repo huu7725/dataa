@@ -1,0 +1,569 @@
+--- Page 1 ---
+Truy hồi thông tin y sinh đa ngôn ngữ
+(ViBioMIR)
+Từ thu thập, chuẩn hóa dữ liệu đến xây dựng hệ thống truy hồi cơ sở
+Nguyễn Hoàng Trung
+Đại học Công nghệ, Đại học Quốc Gia Hà Nội (UET-VNU)
+Ngày 12 tháng 10 năm 2026
+By AI Guru. SĐT: 0392 121 080 Trang 1/48
+--- Page 2 ---
+Mục lục
+Tổng quan bài toán
+Dữ liệu ViBioMIR
+Xây dựng baseline
+By AI Guru. SĐT: 0392 121 080 Trang 2/48
+--- Page 3 ---
+Tổng quan bài toán
+By AI Guru. SĐT: 0392 121 080 Trang 3/48
+--- Page 4 ---
+Một truy vấn, nhiều ngôn ngữ
+▶ Đầu vào: mộttruy vấn y khoa bằng tiếng Việt.
+▶ Kho dữ liệu: tài liệu từ các nguồnViệt – Anh – Trung.
+▶ Hệ thống cần tìm đúngtài liệuvà định vị đúngđoạn nội dung gốc.
+Ví dụ
+Cần làm gì đối với tình trạng tắc nghẽn đường tiết niệu do sỏi thận?
+By AI Guru. SĐT: 0392 121 080 Trang 4/48
+--- Page 5 ---
+Đánh giá ở hai cấp độ
+Document retrieval
+D: tài liệu dự đoán.G: tài liệu tham
+chiếu.
+P =|D∩ G|
+|D| , R =|D∩ G|
+|G| .
+Chunk retrieval
+Precision: tỷ lệ chunk nộp được tính đúng.
+Recall: tỷ lệ chunk tham chiếu tìm thấy.
+Điểm F2
+F2(q) = 5P(q)R(q)
+4P(q) + R(q)
+F macro
+2 = 1
+|Q|
+∑
+q∈Q
+F2(q)
+Tính từng truy vấn rồi lấy trung bình,
+riêng cho tài liệu và đoạn.
+By AI Guru. SĐT: 0392 121 080 Trang 5/48
+--- Page 6 ---
+Ví dụ: đánh giá document
+Kịch bản minh họa:G ={d2, d5, d9}.
+Trả 2 tài liệu
+DA ={d2, d5}
+P = 1, R = 2/3.
+F2≈ 0,714.
+Trả 5 tài liệu
+DB ={d2, d5, d9, d11, d12}
+P = 0,6, R = 1.
+F2≈ 0,882.
+Bài học
+Ví dụ B tìm đủ tài liệu liên quan nên có điểm cao hơn. Trả thêm tài liệu không liên quan vẫn
+làm precision giảm.
+By AI Guru. SĐT: 0392 121 080 Trang 6/48
+--- Page 7 ---
+Một chunk đúng phải khớp thế nào?
+▶ Đối chiếu trongcùng truy vấn và cùng doc_id.
+▶ Chuẩn hóa NFKC, HTML entity, lowercase và khoảng trắng.
+▶ LCS giữ thứ tự token nhưng không bắt buộc liên tiếp.
+overlap(c, g ) = LCStokens(c, g )
+|g| ≥ 0,40
+Ví dụ
+Đoạn tham chiếu 100 token, LCS 45 token: overlap = 45%, đạt ngưỡng.
+By AI Guru. SĐT: 0392 121 080 Trang 7/48
+--- Page 8 ---
+Dữ liệu ViBioMIR
+By AI Guru. SĐT: 0392 121 080 Trang 8/48
+--- Page 9 ---
+Tổng quan dữ liệu ViBioMIR
+Kho tài liệu
+▶ 4.394.718 URLtừ 97 host.
+▶ Mỗi tài liệu có mộtID và mộtURL.
+▶ Nội dung gồm nhiều nguồn và loại tài
+liệu khác nhau.
+Tập truy vấn
+▶ 1.200 câu hỏi tiếng Việt.
+▶ Độ dài trung vị:18 từ.
+▶ Có câu hỏi ngắn và câu hỏi chứa nhiều
+ý.
+Điểm cần phân biệt
+Danh sách URL là điểm bắt đầu. Cần thu thập và xử lý nội dung trước khi có thể tìm kiếm.
+By AI Guru. SĐT: 0392 121 080 Trang 9/48
+--- Page 10 ---
+Dữ liệu tập trung vào một số nguồn lớn
+Nguồn Số URL
+www.cnkang.com 963.438
+www.120ask.com 918.479
+www.familydoctor.com.cn 447.453
+ask.39.net 337.375
+zysjonline.com 243.347
+Ý nghĩa
+Hai host lớn nhất chiếm khoảng 42,8% số URL. Cần hiểu cấu trúc nguồn lớn và vẫn
+quan sát các nguồn nhỏ để tránh bỏ sót loại tài liệu.
+By AI Guru. SĐT: 0392 121 080 Trang 10/48
+--- Page 11 ---
+Các loại nội dung trong corpus
+▶ Hỏi đáp y khoa: câu hỏi, câu trả lời và thông tin người trả lời.
+▶ Bài kiến thức: bệnh, triệu chứng, chẩn đoán và điều trị.
+▶ Sách và cẩm nang: chương, mục, bảng và tài liệu tham khảo.
+▶ Thuốc, dược liệu và tin tức: cấu trúc và mục đích sử dụng khác nhau.
+Vì sao cần phân biệt?
+Mỗi loại tài liệu cần một cách trích xuất và chia đoạn phù hợp.
+By AI Guru. SĐT: 0392 121 080 Trang 11/48
+--- Page 12 ---
+Nội dung lấy từ website có dùng được ngay không?
+▶ Một trang web gồm bài viết, menu, quảng cáo và nội dung liên quan.
+▶ Có trang chỉ trả về thông báo hoặc màn hình chọn ngôn ngữ.
+▶ Tiêu đề, tác giả và ngày đăng có thể thiếu hoặc không đúng với bài.
+▶ Cần nhận diệnphần nội dung chínhtrước khi lập chỉ mục.
+Câu hỏi cần kiểm tra
+Văn bản đang thu được có phải là bài viết cần tìm và còn giữ đầy đủ cấu trúc quan
+trọng không?
+By AI Guru. SĐT: 0392 121 080 Trang 12/48
+--- Page 13 ---
+Ví dụ 1: tải được trang nhưng chưa có bài viết
+Nguyên nhân, triệu chứng và cách điều trị chóng mặt
+https://www.vinmec.com/vie/bai-viet/chong-mat-vi
+Bản thu thập ngày 11/10/2026
+▶ Tiêu đề chỉ còn tên website.
+▶ Trang thông báo chưa có nội dung
+tiếng Anh.
+▶ Yêu cầu tiếp tục để đọc tiếng Việt.
+Nếu đưa ngay vào chỉ mục
+▶ Không có kiến thức về chóng mặt.
+▶ Kết quả tìm kiếm có thể trả về thông
+báo thay cho bằng chứng.
+By AI Guru. SĐT: 0392 121 080 Trang 13/48
+--- Page 14 ---
+Ví dụ 2: chọn đúng vùng bài và giữ cấu trúc
+Bài viết trên Nhà thuốc Long Châu
+1 bánh trung thu bằng mấy bát cơm? Góc nhìn dinh dưỡng và sức khỏe.
+Những mục trong bài
+▶ Thành phần dinh dưỡng trong 1 bánh
+Trung thu.
+▶ Bánh nướng và bánh dẻo.
+▶ Lượng calo trung bình.
+▶ Các câu hỏi thường gặp.
+Cách xử lý phù hợp
+▶ Lấy vùng bài viết thay vì toàn bộ trang.
+▶ Giữ tiêu đề mục cùng đoạn bên dưới.
+▶ Chia đoạn theo từng mục để tìm đúng
+nội dung.
+By AI Guru. SĐT: 0392 121 080 Trang 14/48
+--- Page 15 ---
+Các cách thu thập dữ liệu
+▶ Đọc HTML trực tiếp: nhanh và đơn giản với trang tĩnh. Khó xử lý nội dung được tải
+bằng JavaScript.
+▶ API công khai: dữ liệu thường có cấu trúc rõ. Không phải nguồn nào cũng cung cấp
+API.
+▶ Trình duyệt tự động: lấy được trang cần render. Tốn thời gian và tài nguyên hơn.
+▶ Sitemap: hỗ trợ tìm danh sách trang. Thường không cung cấp đầy đủ nội dung bài viết.
+Cách lựa chọn
+Khảo sát từng nguồn để chọn cách thu thập phù hợp trước khi mở rộng quy mô.
+By AI Guru. SĐT: 0392 121 080 Trang 15/48
+--- Page 16 ---
+Từ URL đến dữ liệu có thể tìm kiếm
+Danh sách URL
+↓
+Thu thập nội dung
+↓
+Trích xuất metadata và văn bản
+↓
+Làm sạch và chuẩn hóa
+↓
+Chia đoạn nội dung
+↓
+Lập chỉ mục và truy hồi
+By AI Guru. SĐT: 0392 121 080 Trang 16/48
+--- Page 17 ---
+Chuẩn hóa metadata
+▶ Thông tin mô tả: tiêu đề, tóm tắt, chuyên mục và ngôn ngữ.
+▶ Thông tin nguồn: URL, tác giả, ngày đăng và ngày cập nhật.
+▶ Thông tin tổ chức: loại tài liệu và nhóm chủ đề.
+▶ Đưa các cách ghi khác nhau về một cấu trúc thống nhất.
+Tại sao cần metadata?
+Metadata giúp hiểu tài liệu, phân nhóm nội dung và hỗ trợ tìm kiếm trước khi đọc
+toàn văn.
+By AI Guru. SĐT: 0392 121 080 Trang 17/48
+--- Page 18 ---
+Ví dụ: chuẩn hóa metadata
+Cùng chủ đề, giữ nguyên tiêu đề và ngôn ngữ
+VI Sỏi thận: triệu chứng và chẩn đoán
+EN Kidney stones: symptoms and diagnosis
+ZH
+肾结石：症状与诊断
+Ngày đăng khác cách viết, cùng một định dạng
+15/09/2026 | September 15, 2026 |
+2026 年 9 月 15 日
+−→ 2026-09-15
+Giữ riêng: ID, URL, tiêu đề gốc, ngôn ngữ và ngày đăng.
+Thiếu thông tin thì để trống, không tự suy tác giả hay ngày đăng.
+By AI Guru. SĐT: 0392 121 080 Trang 18/48
+--- Page 19 ---
+Chuẩn hóa nội dung văn bản
+Bỏ phần giao diện, giữ phần bài viết
+Loại khỏi nội dung chính Giữ tiêu đề bài
+VI Trang chủ / Tìm kiếm Sỏi thận
+EN Home / Search Kidney stones
+ZH
+首页 / 搜索 / 相关文章
+肾结石
+Làm sạch cách biểu diễn
+<p>Sỏi thận</p> → Sỏi thận
+<p>Kidney stones</p> → Kidney stones
+<p> 肾结石 </p>
+→
+肾结石
+Giữ cấu trúc:tiêu đề mục, đoạn văn, danh sách và bảng.
+By AI Guru. SĐT: 0392 121 080 Trang 19/48
+--- Page 20 ---
+Làm sạch nhưng không làm đổi nghĩa
+Ba câu cùng mang ý phủ định
+VI Không ghi nhận sốt.
+EN No fever reported.
+ZH
+未报告发热
+▶ Bỏ từ phủ định sẽ làm thay đổi thông tin của câu.
+▶ Không xóa dấu tiếng Việt hoặc tự bỏ các từ được coi là ít quan trọng.
+▶ Giữ nguyên số và đơn vị:5 mgkhác 50 mg.
+Nguyên tắc
+Làm sạch định dạng, không viết lại ý nghĩa. Lưu văn bản gốc để đối chiếu.
+By AI Guru. SĐT: 0392 121 080 Trang 20/48
+--- Page 21 ---
+Tiền xử lý dữ liệu đa ngôn ngữ
+Minh họa tách từ cho tìm kiếm từ khóa
+Văn bản Một cách biểu diễn
+VI triệu chứng sỏi thận triệu_chứng | sỏi_thận
+EN kidney stones symptoms kidney | stones | symptoms
+ZH
+肾结石
+症状
+肾结石 | 症状
+▶ Tiếng Việt: khoảng trắng có thể nằm giữa các tiếng của một từ.
+▶ Tiếng Trung: nhiều từ không được ngăn cách bằng khoảng trắng.
+▶ Dense retrieval dùng tokenizer đi kèm mô hình.
+Cùng khái niệm:sỏi thận↔ kidney stones↔
+肾结石 .
+By AI Guru. SĐT: 0392 121 080 Trang 21/48
+--- Page 22 ---
+Chunking: chia tài liệu thành các đoạn
+Các cách chia phổ biến
+▶ Theo độ dài: đơn giản và dễ kiểm
+soát.
+▶ Theo cấu trúc: dựa trên câu, đoạn và
+tiêu đề mục.
+▶ Theo ngữ nghĩa: gom các câu cùng
+chủ đề.
+Đánh đổi cần cân nhắc
+▶ Đoạn quá ngắn dễ mất ngữ cảnh.
+▶ Đoạn quá dài dễ chứa nhiều nội dung
+không liên quan.
+▶ Overlap giữ ngữ cảnh nhưng tạo nội
+dung trùng.
+Tại sao cần chunking?
+Truy hồi đoạn giúp định vị bằng chứng cụ thể thay vì trả về cả tài liệu dài.
+By AI Guru. SĐT: 0392 121 080 Trang 22/48
+--- Page 23 ---
+Ví dụ: chia theo mục, giữ ngữ cảnh
+Một bài, hai mục ở cả ba ngôn ngữ
+Tiêu đề bài Mục 1 Mục 2
+VI Sỏi thận Triệu chứng Chẩn đoán
+EN Kidney stones Symptoms Diagnosis
+ZH
+肾结石
+症状
+诊断
+▶ Chunk A: mục Triệu chứng và các câu thuộc mục này.
+▶ Chunk B: mục Chẩn đoán và các câu thuộc mục này.
+Câu hỏi về triệu chứngnên tìm đến chunk A.
+Giữ ID và vị trí gốc để truy ngược mỗi chunk về tài liệu.
+By AI Guru. SĐT: 0392 121 080 Trang 23/48
+--- Page 24 ---
+Ví dụ: giữ câu hỏi cùng câu trả lời
+Tiếng Việt
+Hỏi: Sỏi thận là gì?
+Đáp: Sỏi thận là các khối rắn hình thành trong thận.
+Tiếng Anh
+Q: What are kidney stones?
+A: Kidney stones are solid deposits that form in the kidneys.
+Tiếng Trung
+什么是肾结石？
+肾结石是在肾脏内形成的固体沉积物。
+Cách chia: giữ cặp hỏi đáp cùng đoạn nếu độ dài cho phép.
+By AI Guru. SĐT: 0392 121 080 Trang 24/48
+--- Page 25 ---
+Hậu xử lý và kiểm tra chất lượng dữ liệu
+Ví dụ: hai URL chứa cùng một bài tiếng Việt
+A: Sỏi thận là các khối rắn hình thành trong thận.
+B: Sỏi thận là các khối rắn hình thành trong thận.
+→ Nhận diện bản trùng, vẫn giữ ánh xạ về các ID và URL gốc.
+Cùng chủ đề chưa chắc là bản trùng
+Sỏi thận | Kidney stones |
+肾结石
+→ Không xóa bài chỉ vì tiêu đề gần nghĩa hoặc khác ngôn ngữ.
+▶ Kiểm tra trang lỗi, nội dung rỗng và đoạn mất ngữ cảnh.
+▶ Giữ nguồn của từng chunk để trả về đúng bằng chứng.
+By AI Guru. SĐT: 0392 121 080 Trang 25/48
+--- Page 26 ---
+Vì sao dữ liệu quyết định chất lượng truy hồi?
+▶ Không thu thập được bài liên quan thì mô hình không thể tìm thấy bài đó.
+▶ Trích xuất thiếu đoạn quan trọng thì bằng chứng bị mất.
+▶ Nội dung nhiễu hoặc trùng làm kết quả tìm kiếm khó chính xác.
+▶ Chia đoạn không phù hợp làm mất ngữ cảnh của câu trả lời.
+Thông điệp
+Mô hình tốt cần đi cùng một kho dữ liệu có độ phủ và chất lượng phù hợp.
+By AI Guru. SĐT: 0392 121 080 Trang 26/48
+--- Page 27 ---
+Xây dựng baseline
+By AI Guru. SĐT: 0392 121 080 Trang 27/48
+--- Page 28 ---
+Phân nhóm chủ đề dựa trên ICD-10
+▶ ICD-10 tổ chức bệnh và vấn đề sức khỏe theohệ phân cấp.
+▶ Có thể bắt đầu bằng nhóm lớn nhưtuần hoàn, hô hấp, nội tiết và tiêu hóa.
+▶ Dựa trêntiêu đề, tóm tắt và chuyên mụcđể gán nhóm chủ đề.
+▶ Một tài liệu có thể thuộc nhiều nhóm.
+Tại sao dùng ICD-10?
+Có một hệ quy chiếu thống nhất để tổ chức dữ liệu và phân tích kết quả giữa các
+ngôn ngữ.
+By AI Guru. SĐT: 0392 121 080 Trang 28/48
+--- Page 29 ---
+Các cách phân nhóm tài liệu
+Dựa trên từ điển và quy tắc
+▶ Khớp tên bệnh và từ đồng nghĩa.
+▶ Dễ giải thích và không cần nhiều dữ
+liệu gán nhãn.
+▶ Dễ bỏ sót cách diễn đạt mới hoặc từ
+nhập nhằng.
+Dựa trên mô hình ngôn ngữ
+▶ So khớp ngữ nghĩa hoặc phân loại văn
+bản.
+▶ Nhận diện được nhiều cách diễn đạt.
+▶ Cần kiểm tra nhãn sai và khả năng phù
+hợp y sinh.
+Hướng tiếp cận
+Bắt đầu bằng nhóm lớn, kết hợp nhiều tín hiệu và giữ trạng thái chưa xác định khi thiếu bằng
+chứng.
+By AI Guru. SĐT: 0392 121 080 Trang 29/48
+--- Page 30 ---
+Ví dụ: nhóm chủ đề ICD-10 đa ngôn ngữ
+Ba tiêu đề minh họa cùng một chủ đề
+VI Đái tháo đường type 2
+EN Type 2 diabetes
+ZH
+2 型糖尿病
+−→Nhóm E00–E90: bệnh nội tiết, dinh dưỡng và chuyển hóa.
+▶ Từ điển đa ngôn ngữ giúp nối các tên gọi về cùng nhóm.
+▶ Đọc thêm tóm tắt hoặc nội dung nếu tiêu đề chưa đủ rõ.
+▶ Tài liệu có nhiều chủ đề có thể nhận nhiều nhóm.
+Không suy chẩn đoán:tiêu đề “đau ngực” chưa đủ để kết luận bệnh mạch vành.
+By AI Guru. SĐT: 0392 121 080 Trang 30/48
+--- Page 31 ---
+Dùng nhóm ICD-10 để làm gì?
+▶ Khám phá dữ liệu: nhóm bệnh nào nhiều hoặc ít tài liệu?
+▶ Phân tích kết quả: hệ thống làm tốt và chưa tốt ở nhóm nào?
+▶ Hỗ trợ tìm kiếm: ưu tiên tài liệu thuộc nhóm chủ đề liên quan.
+▶ Hỗ trợ dữ liệu đa ngôn ngữ: kết nối các cách gọi về cùng một nhóm.
+Tránh lọc quá chặt
+Câu hỏi có thể liên quan nhiều bệnh. Phân nhóm sai không nên làm mất toàn bộ tài
+liệu hữu ích.
+By AI Guru. SĐT: 0392 121 080 Trang 31/48
+--- Page 32 ---
+Các nhóm phương pháp trong baseline
+Nhóm phương pháp Ý tưởng Ví dụ
+Lexical retrieval Khớp từ khóa TF-IDF, BM25
+Dense retrieval So khớp vector ngữ nghĩa mBERT, BGE-M3
+Hybrid retrieval Kết hợp lexical và dense Hợp thứ hạng, RRF
+Reranking Đọc kỹ tập ứng viên Cross-encoder
+Mục đích của baseline
+Bắt đầu bằng phương pháp đơn giản để hiểu dữ liệu, sau đó bổ sung thành phần khi
+giải quyết được một hạn chế cụ thể.
+By AI Guru. SĐT: 0392 121 080 Trang 32/48
+--- Page 33 ---
+Kiến trúc tổng thể hệ thống truy hồi
+Câu hỏi tiếng Việt
+↓
+Tìm theo từ khóa Tìm theo ngữ nghĩa
+Lexical retrieval Dense retrieval
+↓
+Hợp các tài liệu và đoạn ứng viên
+↓
+Xếp hạng lại theo mức độ liên quan
+↓
+Trả về tài liệu và đoạn bằng chứng gốc
+By AI Guru. SĐT: 0392 121 080 Trang 33/48
+--- Page 34 ---
+Lexical retrieval: TF-IDF và BM25
+TF-IDF
+▶ Ưu tiên từ xuất hiện nhiều trong bài
+nhưng hiếm trong corpus.
+▶ Dễ hiểu và dễ tạo mốc so sánh.
+▶ Chưa mô hình hóa tốt ảnh hưởng của
+độ dài và lặp từ.
+BM25
+▶ Bổ sung bão hòa tần suất từ và điều
+chỉnh độ dài.
+▶ Phù hợp với tài liệu có độ dài khác
+nhau.
+▶ Vẫn phụ thuộc từ khóa xuất hiện trong
+văn bản.
+By AI Guru. SĐT: 0392 121 080 Trang 34/48
+--- Page 35 ---
+Lexical retrieval: điểm mạnh và điểm yếu
+Điểm mạnh
+▶ Nhanh và tương đối ít tốn tài nguyên.
+▶ Dễ giải thích vì sao tài liệu được chọn.
+▶ Mạnh với thuật ngữ hoặc thực thể
+chính xác.
+Điểm yếu
+▶ Khó khớp từ đồng nghĩa và cách diễn
+đạt khác.
+▶ Hạn chế khi query và tài liệu khác
+ngôn ngữ.
+▶ Không hiểu đầy đủ ngữ cảnh của câu.
+Tại sao vẫn dùng?
+Là mốc so sánh đơn giản và bổ sung khả năng khớp chính xác mà tìm kiếm ngữ nghĩa có thể
+bỏ sót.
+By AI Guru. SĐT: 0392 121 080 Trang 35/48
+--- Page 36 ---
+Dense retrieval: tìm kiếm theo ngữ nghĩa
+▶ Mã hóa câu hỏi và đoạn văn thànhvector.
+▶ Các cách diễn đạt gần nghĩa được kỳ vọng nằm gần nhau trong không gian vector.
+▶ Tìm các đoạn có vector gần với vector của câu hỏi.
+▶ Ví dụ mô hình:mBERT và BGE-M3.
+Ví dụ
+Sỏi thận↔ kidney stones↔
+肾结石 .
+Ba cách viết có thể biểu đạt cùng một khái niệm.
+By AI Guru. SĐT: 0392 121 080 Trang 36/48
+--- Page 37 ---
+Dense retrieval: điểm mạnh và điểm yếu
+Điểm mạnh
+▶ Khớp cách diễn đạt khác nhau.
+▶ Có thể hỗ trợ truy hồi xuyên ngôn ngữ.
+Điểm yếu
+▶ Tốn tài nguyên mã hóa và lưu vector.
+▶ Dễ nhầm đoạn gần nghĩa nhưng sai chi
+tiết.
+▶ Phụ thuộc mô hình và miền dữ liệu.
+Tại sao dùng?
+Giảm khoảng cách ngôn ngữ giữa query và tài liệu. mBERT cần cách tạo vector và huấn luyện
+phù hợp. BGE-M3 được huấn luyện cho retrieval.
+By AI Guru. SĐT: 0392 121 080 Trang 37/48
+--- Page 38 ---
+Hybrid retrieval: kết hợp hai cách tìm kiếm
+Ý tưởng và điểm mạnh
+▶ Lấy ứng viên từ lexical và dense.
+▶ Kết hợp khớp từ chính xác với khớp
+ngữ nghĩa.
+▶ Giảm phụ thuộc vào một cách biểu
+diễn.
+Điểm yếu
+▶ Phải vận hành nhiều chỉ mục.
+▶ Cần chọn cách hợp kết quả phù hợp.
+▶ Không bảo đảm tốt hơn nếu ứng viên
+có nhiều nhiễu.
+Tại sao dùng?
+Câu hỏi y khoa vừa cần đúng thuật ngữ, vừa có nhiều cách diễn đạt. Có thể hợp thứ hạng
+bằng RRF hoặc kết hợp điểm sau chuẩn hóa.
+By AI Guru. SĐT: 0392 121 080 Trang 38/48
+--- Page 39 ---
+Reranking: xếp hạng lại tập ứng viên
+Ý tưởng và điểm mạnh
+▶ Đọc đồng thời câu hỏi và từng đoạn
+ứng viên.
+▶ So khớp ngữ cảnh chi tiết hơn.
+▶ Ưu tiên đoạn thực sự trả lời đúng câu
+hỏi.
+Điểm yếu
+▶ Chậm và tốn tính toán hơn retrieval.
+▶ Chỉ xử lý một tập ứng viên nhỏ.
+▶ Không tìm lại được bằng chứng đã bị
+bỏ sót.
+Tại sao dùng?
+Retrieval tìm rộng, reranking chọn kỹ. Ví dụ mô hình đa ngôn ngữ: BGE-reranker-v2-m3.
+By AI Guru. SĐT: 0392 121 080 Trang 39/48
+--- Page 40 ---
+Ví dụ: cùng bệnh nhưng khác ý cần tìm
+Câu hỏi tiếng Việt
+Triệu chứng của sỏi thận là gì?
+Ứng viên Chủ đề của đoạn Mức liên quan kỳ vọng
+A (VI) Chẩn đoán sỏi thận Cùng bệnh, khác ý
+B (EN) Symptoms of kidney stones Đúng ý triệu chứng
+C (ZH)
+肾结石 :
+症状 Đúng ý triệu chứng
+▶ Lexical dễ khớp từ tiếng Việt ở A nhưng có thể bỏ sót B, C.
+▶ Dense đa ngôn ngữ có thể đưa cả ba đoạn vào tập ứng viên.
+▶ Reranker cần ưu tiên nội dung trả lời đúng ý, dù khác ngôn ngữ.
+By AI Guru. SĐT: 0392 121 080 Trang 40/48
+--- Page 41 ---
+Từ kết quả tìm kiếm đến bằng chứng
+▶ Gộp các đoạn thuộc cùng một tài liệu.
+▶ Loại các đoạn bị lặp do chia đoạn chồng lấn.
+▶ Chọn các đoạn liên quan đến từng ý trong câu hỏi.
+▶ Trả về nội dung gốc và tài liệu nguồn tương ứng.
+Mục tiêu
+Tìm đúng tài liệu và đúng phần nội dung chứa thông tin cần tìm.
+By AI Guru. SĐT: 0392 121 080 Trang 41/48
+--- Page 42 ---
+Đánh giá các phương pháp như thế nào?
+▶ So sánh trêncùng corpus, cùng bộ câu hỏi và cùng cách chia đoạn.
+▶ Đo Precision, Recall và F2 ở cấp tài liệu và đoạn.
+▶ Xem thêmthời gian tìm kiếm và tài nguyên sử dụng.
+▶ Phân tích theo ngôn ngữ, nhóm bệnh và loại câu hỏi.
+Câu hỏi cần trả lời
+Phương pháp mới cải thiện ở đâu, còn sai ở đâu và có đáng với chi phí bổ sung không?
+By AI Guru. SĐT: 0392 121 080 Trang 42/48
+--- Page 43 ---
+Ba điểm cần nhớ
+▶ Dữ liệu: thu thập đủ và giữ đúng nội dung trước khi tìm kiếm.
+▶ ICD-10: giúp tổ chức chủ đề và hiểu hệ thống đang làm tốt ở nhóm nào.
+▶ Phương pháp: lexical khớp từ, dense khớp nghĩa, hybrid kết hợp và reranker
+chọn kỹ.
+Thông điệp
+Chọn phương pháp theo đặc điểm dữ liệu và hạn chế cần giải quyết, sau đó kiểm
+chứng bằng thực nghiệm.
+By AI Guru. SĐT: 0392 121 080 Trang 43/48
+--- Page 44 ---
+Cảm ơn và trao đổi
+By AI Guru. SĐT: 0392 121 080 Trang 44/48
+--- Page 45 ---
+ICD-10: các chương I–XI
+▶ I–IV: I · A00–B99: nhiễm trùng / ký sinh. II· C00–D48: khối u. III · D50–D89: máu /
+miễn dịch. IV · E00–E90: nội tiết / chuyển hóa
+▶ V–VIII: V · F00–F99: tâm thần / hành vi. VI· G00–G99: thần kinh. VII· H00–H59:
+mắt. VIII · H60–H95: tai
+▶ IX–XI: IX · I00–I99: tuần hoàn. X· J00–J99: hô hấp. XI· K00–K93: tiêu hóa
+By AI Guru. SĐT: 0392 121 080 Trang 45/48
+--- Page 46 ---
+ICD-10: các chương XII–XXII
+▶ XII–XV: XII · L00–L99: da. XIII · M00–M99: cơ xương / mô liên kết. XIV· N00–N99:
+tiết niệu / sinh dục. XV· O00–O99: thai sản
+▶ XVI–XIX: XVI · P00–P96: chu sinh. XVII· Q00–Q99: dị tật bẩm sinh. XVIII· R00–R99:
+triệu chứng / dấu hiệu. XIX· S00–T98: chấn thương / ngộ độc
+▶ XX–XXII: XX · V01–Y98: nguyên nhân bên ngoài. XXI· Z00–Z99: yếu tố sức khỏe /
+tiếp xúc dịch vụ. XXII· U00–U85: mã mục đích đặc biệt
+By AI Guru. SĐT: 0392 121 080 Trang 46/48
+--- Page 47 ---
+Phụ lục: TF-IDF và BM25
+TF-IDF
+wt,d = tf( t, d ) idf(t)
+▶ TF: mức xuất hiện trong tài liệu.
+▶ IDF: mức phân biệt trong corpus.
+▶ So sánh bằng cosine.
+BM25
+▶ Sử dụng độ hiếm của từ.
+▶ Giảm lợi ích của việc lặp từ quá nhiều.
+▶ Điều chỉnh theo độ dài tài liệu.
+Khác biệt chính
+BM25 bổ sung bão hòa tần suất từ và chuẩn hóa độ dài thay vì chỉ dựa trên trọng số TF-IDF.
+By AI Guru. SĐT: 0392 121 080 Trang 47/48
+--- Page 48 ---
+Tài liệu tham khảo
+▶ ViBioMIR: README và báo cáo kiểm kê dữ liệu.
+▶ Cuộc thi R2AI2026: mô tả nhiệm vụ và phương pháp đánh giá.
+▶ WHO ICD-10: hệ phân loại bệnh và vấn đề sức khỏe.
+▶ Introduction to Information Retrieval: lexical retrieval.
+▶ Model cards: mBERT, BGE-M3 và BGE-reranker.
+▶ Ví dụ thuật ngữ: NIDDK, MSD Manuals và WHO.
+By AI Guru. SĐT: 0392 121 080 Trang 48/48

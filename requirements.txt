@@ -1,0 +1,8 @@
+aiohttp>=3.10
+orjson>=3.10
+pyarrow>=18
+trafilatura>=2.0
+psutil>=6.0
+huggingface_hub>=0.30
+pypdf>=5.0
+curl_cffi==0.13.0

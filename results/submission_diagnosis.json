@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-15T01:33:06.899699+00:00",
+  "cause": "All document IDs were JSON strings. Scorer canonicalized numeric strings as pubmed:<id>; scoring_result diagnostics reported unknown_doc=13353 and zero relevant predictions.",
+  "source_prediction_zip": "C:\\Users\\TUF\\Downloads\\prediction_result.zip",
+  "source_prediction_sha256": "afcfb011d717c378c5d3be710df2a11d08b8f66a79bc3e5b522be76a12bfe499",
+  "converted_documents": 23997,
+  "converted_chunks": 26825,
+  "queries": 1200,
+  "new_id_serialization": "integer",
+  "local_validation": {
+    "valid": true,
+    "queries": 1200,
+    "documents": 23997,
+    "chunks": 26825,
+    "id_serialization": "integer",
+    "original_chunk_text_verified": true,
+    "json_file": "D:\\R2AI\\competition\\work_vi_en_zh\\submission.json",
+    "zip_file": "D:\\R2AI\\competition\\work_vi_en_zh\\submission.zip",
+    "json_sha256": "df0522107ee745dd841469ec7d9d2b78e5928502b206e8d5d4a5adc4bd6ba351",
+    "zip_sha256": "548229f3bb96dea1d521c90364ed910c411a6bb89cc1918bb55591b030ea98dd"
+  },
+  "scoring_result_sha256": "48fc69b1f923c77494d5473611178cac1bd7ff7ef04f55c9f3487b1b4c753f81",
+  "requires_new_dashboard_submission": true
+}

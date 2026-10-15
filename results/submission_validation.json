@@ -1,0 +1,12 @@
+{
+  "valid": true,
+  "queries": 1200,
+  "documents": 23997,
+  "chunks": 26825,
+  "id_serialization": "integer",
+  "original_chunk_text_verified": true,
+  "json_file": "D:\\R2AI\\competition\\work_vi_en_zh\\submission.json",
+  "zip_file": "D:\\R2AI\\competition\\work_vi_en_zh\\submission.zip",
+  "json_sha256": "df0522107ee745dd841469ec7d9d2b78e5928502b206e8d5d4a5adc4bd6ba351",
+  "zip_sha256": "548229f3bb96dea1d521c90364ed910c411a6bb89cc1918bb55591b030ea98dd"
+}

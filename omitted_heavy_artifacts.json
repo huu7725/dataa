@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-10-15T01:41:43.512667+00:00",
+  "artifacts": [
+    {
+      "path": "corpus_data_vi_en_zh",
+      "files": 7828,
+      "bytes": 4169603484,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": "competition/models",
+      "files": 42,
+      "bytes": 4726980437,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": "competition/work_vi_en_zh",
+      "files": 570,
+      "bytes": 8716030678,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": "corpus_data",
+      "files": 120,
+      "bytes": 11101933526,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": "corpus_ready",
+      "files": 134,
+      "bytes": 2696537058,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": ".competition_venv",
+      "files": 5475,
+      "bytes": 134842935,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": ".vendor",
+      "files": 125,
+      "bytes": 3947162,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    },
+    {
+      "path": ".recovery_vendor",
+      "files": 135,
+      "bytes": 5613052,
+      "reason": "Local crawl/model/checkpoint artifacts; too large for ordinary GitHub storage. Hashes and reproducibility metadata are included separately."
+    }
+  ]
+}

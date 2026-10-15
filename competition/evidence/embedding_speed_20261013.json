@@ -1,0 +1,124 @@
+{
+  "sample": "Next 128 original corpus chunks at the saved embedding cursor",
+  "sample_after_id": 1095480,
+  "chunks": 128,
+  "model": {
+    "model_id": "BAAI/bge-m3",
+    "revision": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+    "published_at": "2024-01-27T17:07:29+00:00",
+    "revision_at": "2024-04-02T13:03:35+00:00",
+    "parameter_count": 567754752,
+    "parameter_evidence": "evidence/bge-m3-safetensors-header.json",
+    "public_url": "https://huggingface.co/BAAI/bge-m3",
+    "weights_file": "model.safetensors",
+    "weights_sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+    "dimension": 1024,
+    "backend": "torch",
+    "pooling": "cls",
+    "query_prefix": "",
+    "passage_prefix": ""
+  },
+  "attention_implementation": "sdpa",
+  "results": [
+    {
+      "requested_batch": 4,
+      "effective_batch": 4,
+      "chunks_per_second": 75.892737236794,
+      "seconds_per_128": 1.6865909000043757,
+      "timings": [
+        1.8330655999598093,
+        1.6704179999651387,
+        1.6865909000043757
+      ],
+      "peak_allocated_mb": 1115.11181640625,
+      "peak_reserved_mb": 1152.0,
+      "free_vram_mb_after": 2107.7000007629395,
+      "minimum_cosine_vs_batch4": 0.9999998807907104,
+      "maximum_component_difference": 0.0
+    },
+    {
+      "requested_batch": 8,
+      "effective_batch": 8,
+      "chunks_per_second": 85.71510268625333,
+      "seconds_per_128": 1.4933191000018269,
+      "timings": [
+        1.521562299982179,
+        1.4927530999993905,
+        1.4933191000018269
+      ],
+      "peak_allocated_mb": 1140.0888671875,
+      "peak_reserved_mb": 1182.0,
+      "free_vram_mb_after": 2077.7000007629395,
+      "minimum_cosine_vs_batch4": 0.999975323677063,
+      "maximum_component_difference": 0.0007990412414073944
+    },
+    {
+      "requested_batch": 12,
+      "effective_batch": 12,
+      "chunks_per_second": 85.40084554883757,
+      "seconds_per_128": 1.4988141999929212,
+      "timings": [
+        1.4988141999929212,
+        1.5075636999681592,
+        1.4295984999625944
+      ],
+      "peak_allocated_mb": 1162.0537109375,
+      "peak_reserved_mb": 1226.0,
+      "free_vram_mb_after": 2033.7000007629395,
+      "minimum_cosine_vs_batch4": 0.999975323677063,
+      "maximum_component_difference": 0.0007990412414073944
+    },
+    {
+      "requested_batch": 16,
+      "effective_batch": 16,
+      "chunks_per_second": 91.32530208354075,
+      "seconds_per_128": 1.401583099970594,
+      "timings": [
+        1.4095631000236608,
+        1.401583099970594,
+        1.3933159000007436
+      ],
+      "peak_allocated_mb": 1184.14404296875,
+      "peak_reserved_mb": 1266.0,
+      "free_vram_mb_after": 1993.7000007629395,
+      "minimum_cosine_vs_batch4": 0.999975323677063,
+      "maximum_component_difference": 0.0007990412414073944
+    },
+    {
+      "requested_batch": 24,
+      "effective_batch": 24,
+      "chunks_per_second": 90.01007057761532,
+      "seconds_per_128": 1.4220631000353023,
+      "timings": [
+        1.534848699986469,
+        1.4220631000353023,
+        1.3956261000130326
+      ],
+      "peak_allocated_mb": 1233.3408203125,
+      "peak_reserved_mb": 1312.0,
+      "free_vram_mb_after": 1947.7000007629395,
+      "minimum_cosine_vs_batch4": 0.999975323677063,
+      "maximum_component_difference": 0.0007990412414073944
+    },
+    {
+      "requested_batch": 32,
+      "effective_batch": 32,
+      "chunks_per_second": 89.60274273893444,
+      "seconds_per_128": 1.428527700016275,
+      "timings": [
+        1.4417849000310525,
+        1.428527700016275,
+        1.3787785000167787
+      ],
+      "peak_allocated_mb": 1279.85009765625,
+      "peak_reserved_mb": 1392.0,
+      "free_vram_mb_after": 1867.7000007629395,
+      "minimum_cosine_vs_batch4": 0.999975323677063,
+      "maximum_component_difference": 0.0007990412414073944
+    }
+  ],
+  "complete": true,
+  "recommended_batch": 16,
+  "speedup_vs_batch4": 1.2033470580800818,
+  "limitation": "Short local throughput sample; whole-corpus speed depends on chunk length, RAM paging and laptop GPU power."
+}

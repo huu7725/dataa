@@ -1,0 +1,804 @@
+{
+  "created_at": "2026-10-14T21:08:36.588372+00:00",
+  "system": "ViBioMIR hybrid retrieval",
+  "model_cutoff_local": "2026-08-01T00:00:00+07:00",
+  "maximum_model_parameters": 15000000000,
+  "models": [
+    {
+      "model_id": "BAAI/bge-m3",
+      "revision": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+      "published_at": "2024-01-27T17:07:29+00:00",
+      "revision_at": "2024-04-02T13:03:35+00:00",
+      "parameter_count": 567754752,
+      "parameter_evidence": "evidence/bge-m3-safetensors-header.json",
+      "public_url": "https://huggingface.co/BAAI/bge-m3",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+      "dimension": 1024,
+      "backend": "torch",
+      "pooling": "cls",
+      "query_prefix": "",
+      "passage_prefix": ""
+    },
+    {
+      "model_id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "published_at": "2024-03-15T13:32:18+00:00",
+      "revision_at": "2024-06-24T14:08:45+00:00",
+      "parameter_count": 567755777,
+      "parameter_evidence": "evidence/BAAI--bge-reranker-v2-m3--revision.json",
+      "public_url": "https://huggingface.co/BAAI/bge-reranker-v2-m3",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+      "backend": "torch",
+      "role": "reranker"
+    }
+  ],
+  "hosted_llm_used": false,
+  "chunk_generation_used": false,
+  "data": {
+    "dataset_url": "https://huggingface.co/datasets/AIGuruTinix/ViBioMIR",
+    "links_file": "D:\\R2AI\\links_corpus_vi_en_zh.parquet",
+    "links_sha256": "9e34cb4b7d6424b80ed2634ada581ea9e2d97da69c245d80bdbb31413a78e8ce",
+    "query_file": "D:\\R2AI\\query.parquet",
+    "query_sha256": "ce13508b893bbd6b9169679d540630bc37eb5950cad08b4d5e0e5d7063670c08",
+    "sources": "Original URLs stored in corpus.sqlite:sources and in the crawl JSONL records",
+    "documents_indexed": 1041242,
+    "chunks_indexed": 4328424,
+    "missing_source_ids": 153227,
+    "source_complete": false,
+    "external_training_data": [],
+    "citation": "MedKB — Medical Knowledge Base, https://medkb.tinix.ai/",
+    "corpus_audit": "D:\\R2AI\\corpus_data_vi_en_zh\\corpus_audit.json"
+  },
+  "source_representations": {
+    "crawl_host_settings": {
+      "baotayninh.vn": {
+        "per_host": 4,
+        "host_interval": 0.2
+      },
+      "ask.39.net": {
+        "per_host": 16,
+        "host_interval": 0.06,
+        "connect_timeout": 5,
+        "retries": 0,
+        "prefer_mobile": true
+      },
+      "www.120ask.com": {
+        "per_host": 2,
+        "host_interval": 1,
+        "timeout": 12,
+        "connect_timeout": 5,
+        "retries": 0,
+        "host_failure_limit": 8
+      },
+      "bingli.iiyi.com": {
+        "per_host": 2,
+        "host_interval": 1,
+        "timeout": 12,
+        "connect_timeout": 5,
+        "retries": 0,
+        "host_failure_limit": 8
+      },
+      "article.iiyi.com": {
+        "per_host": 2,
+        "host_interval": 1,
+        "timeout": 12,
+        "connect_timeout": 5,
+        "retries": 0,
+        "host_failure_limit": 8
+      },
+      "laodong.vn": {
+        "per_host": 3,
+        "host_interval": 0.3,
+        "retries": 1,
+        "host_failure_limit": 8,
+        "timeout": 25
+      },
+      "nhathuoclongchau.com.vn": {
+        "per_host": 4,
+        "host_interval": 0.2,
+        "retries": 1,
+        "host_failure_limit": 8,
+        "timeout": 25
+      },
+      "zysjonline.com": {
+        "per_host": 1,
+        "host_interval": 1,
+        "retries": 0,
+        "host_failure_limit": 8
+      },
+      "pmc-ecm-healthblog.beta.pharmacity.io": {
+        "per_host": 2,
+        "host_interval": 0.3,
+        "retries": 1,
+        "host_failure_limit": 8,
+        "timeout": 25
+      },
+      "pubmed.ncbi.nlm.nih.gov": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "timeout": 20,
+        "connect_timeout": 8,
+        "retries": 1,
+        "host_failure_limit": 16
+      },
+      "byby.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "baby.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "cancer.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "care.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "ek.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "fitness.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "fk.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "food.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "gan.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "gc.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "gk.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "heart.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "man.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "nk.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "pf.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "shen.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "sj.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "tnb.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "wei.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "woman.39.net": {
+        "per_host": 2,
+        "host_interval": 0.5,
+        "retries": 0,
+        "host_failure_limit": 8,
+        "timeout": 20
+      },
+      "vov.vn": {
+        "per_host": 2,
+        "host_interval": 0.35,
+        "retries": 1,
+        "host_failure_limit": 8,
+        "timeout": 25
+      },
+      "www.qdnd.vn": {
+        "per_host": 2,
+        "host_interval": 0.4,
+        "retries": 1,
+        "host_failure_limit": 8,
+        "timeout": 25
+      },
+      "thaythuocvietnam.vn": {
+        "per_host": 2,
+        "host_interval": 0.25,
+        "retries": 0,
+        "host_failure_limit": 8
+      }
+    },
+    "pubmed": {
+      "api": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+      "lookup": "MED records matched by exact PMID to original PubMed URL",
+      "content": "Source title and abstract; no full text substituted or generated"
+    },
+    "note": "Some original URLs use official mobile/API representations; original doc IDs/URLs are retained with identity checks."
+  },
+  "config": {
+    "links": "D:\\R2AI\\links_corpus_vi_en_zh.parquet",
+    "queries": "D:\\R2AI\\query.parquet",
+    "source_manifest": "D:\\R2AI\\corpus_data_vi_en_zh\\system_snapshot_20261013.json",
+    "crawl_data_dir": "corpus_data_vi_en_zh",
+    "work_dir": "D:\\R2AI\\competition\\work_vi_en_zh",
+    "expected_queries": 1200,
+    "id_serialization": "string",
+    "embedding_model": "bge_m3",
+    "reranker_model": "reranker_m3",
+    "device": "cuda",
+    "embedding_adapter": "D:\\R2AI\\competition\\work_vi_en_zh\\training\\adapter.json",
+    "training": {
+      "mode": "inverse_cloze_diagonal",
+      "examples_per_language": 512,
+      "seed": 20261013,
+      "epochs": 15,
+      "learning_rate": 0.02
+    },
+    "chunk_tokens": 240,
+    "chunk_overlap": 48,
+    "embedding_max_tokens": 256,
+    "embedding_batch_size": 16,
+    "vector_shard_rows": 25000,
+    "dense_top_k": 120,
+    "lexical_top_k": 120,
+    "rerank_top_k": 64,
+    "rerank_batch_size": 2,
+    "rerank_max_tokens": 512,
+    "docs_top_k": 20,
+    "chunks_top_k": 40,
+    "chunks_per_doc": 2,
+    "context_neighbors": 1,
+    "context_max_characters": 4000,
+    "search_block_rows": 4096,
+    "search_query_batch": 64,
+    "minimum_available_ram_mb": 500,
+    "minimum_free_disk_gb": 25,
+    "minimum_free_vram_mb": 1800,
+    "final_score_doc_weight": null,
+    "embedding_sort_by_length": true,
+    "embedding_read_batch_size": 256,
+    "embedding_checkpoint_rows": 1024
+  },
+  "score_status": "unmeasured_without_reference_labels_or_BTC_results",
+  "final_score_formula": null,
+  "target_final_score": ">0.5",
+  "team_training": {
+    "identity": "a9a218e49be93a66f4518585777fecf3d717c14db1527b0f7d5ee7b346c204fe",
+    "method": "Frozen public BGE-M3 plus a trained diagonal retrieval adapter",
+    "base_model": {
+      "model_id": "BAAI/bge-m3",
+      "revision": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+      "published_at": "2024-01-27T17:07:29+00:00",
+      "revision_at": "2024-04-02T13:03:35+00:00",
+      "parameter_count": 567754752,
+      "parameter_evidence": "evidence/bge-m3-safetensors-header.json",
+      "public_url": "https://huggingface.co/BAAI/bge-m3",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+      "dimension": 1024,
+      "backend": "torch",
+      "pooling": "cls",
+      "query_prefix": "",
+      "passage_prefix": ""
+    },
+    "trainable_parameters": 1024,
+    "maximum_total_parameters": 567755776,
+    "data": {
+      "dataset_type": "inverse-cloze weak same-document pairs",
+      "source_manifest": "D:\\R2AI\\corpus_data_vi_en_zh\\corpus_manifest.json",
+      "source_manifest_sha256": "63e30871a4f61f3d549c37a7b4f57a1468e4832ffe3321eb6b37ec102e6c03f3",
+      "source_links_sha256": "9e34cb4b7d6424b80ed2634ada581ea9e2d97da69c245d80bdbb31413a78e8ce",
+      "source_url": "https://huggingface.co/datasets/AIGuruTinix/ViBioMIR",
+      "external_training_data": [],
+      "competition_queries_used": false,
+      "reference_labels_used": false,
+      "generated_text_used": false,
+      "scanned_documents": 1041242,
+      "pairs": 1536,
+      "counts": {
+        "vi/train": 424,
+        "vi/validation": 88,
+        "en/validation": 99,
+        "en/train": 413,
+        "zh/train": 395,
+        "zh/validation": 117
+      },
+      "sha256": "dace26240992237fbf8690d1d28a6324fce1ee79160709dc335a048fe983c9a4",
+      "seed": 20261013,
+      "limitation": "Weak same-document contexts can be noisy; validation is monolingual and cannot establish cross-language F2 or leaderboard score."
+    },
+    "adapter_path": "D:\\R2AI\\competition\\work_vi_en_zh\\training\\adapter.json",
+    "adapter_sha256": "584f2b30250e17577a05c1a2e5038d276ce1f9345f5197fff3b6395f8d872c69",
+    "settings": {
+      "mode": "inverse_cloze_diagonal",
+      "examples_per_language": 512,
+      "seed": 20261013,
+      "epochs": 15,
+      "learning_rate": 0.02
+    },
+    "baseline": {
+      "task": "held-out inverse-cloze; not BTC evaluation",
+      "pairs": 304,
+      "by_language": {
+        "vi": {
+          "recall_at_1": 0.9545454545454546,
+          "recall_at_5": 0.9772727272727273
+        },
+        "en": {
+          "recall_at_1": 0.98989898989899,
+          "recall_at_5": 0.98989898989899
+        },
+        "zh": {
+          "recall_at_1": 0.6923076923076923,
+          "recall_at_5": 0.7948717948717948
+        }
+      },
+      "macro_recall_at_1": 0.8789173789173791,
+      "macro_recall_at_5": 0.9206811706811706
+    },
+    "best_validation": {
+      "task": "held-out inverse-cloze; not BTC evaluation",
+      "pairs": 304,
+      "by_language": {
+        "vi": {
+          "recall_at_1": 0.9545454545454546,
+          "recall_at_5": 0.9772727272727273
+        },
+        "en": {
+          "recall_at_1": 0.98989898989899,
+          "recall_at_5": 0.98989898989899
+        },
+        "zh": {
+          "recall_at_1": 0.6923076923076923,
+          "recall_at_5": 0.8034188034188035
+        }
+      },
+      "macro_recall_at_1": 0.8789173789173791,
+      "macro_recall_at_5": 0.9235301735301734
+    },
+    "best_epoch": 1,
+    "selected_for_retrieval": false,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.5644974902272224,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6923076923076923,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8789173789173791,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.49630218371748924,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.5049777790904045,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.49314944371581076,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.4997298583388329,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.4892866998910904,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.7948717948717948
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9206811706811706
+        }
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.4841438226401806,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.7948717948717948
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9206811706811706
+        }
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.4972374767065048,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.7948717948717948
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9206811706811706
+        }
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.48278459161520004,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.7948717948717948
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9206811706811706
+        }
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.49270854964852334,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.48004746325314046,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.7948717948717948
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9206811706811706
+        }
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.48915926888585093,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.4934742860496044,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.49324265867471695,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.4925588570535183,
+        "validation": {
+          "task": "held-out inverse-cloze; not BTC evaluation",
+          "pairs": 304,
+          "by_language": {
+            "vi": {
+              "recall_at_1": 0.9545454545454546,
+              "recall_at_5": 0.9772727272727273
+            },
+            "en": {
+              "recall_at_1": 0.98989898989899,
+              "recall_at_5": 0.98989898989899
+            },
+            "zh": {
+              "recall_at_1": 0.6752136752136753,
+              "recall_at_5": 0.8034188034188035
+            }
+          },
+          "macro_recall_at_1": 0.8732193732193734,
+          "macro_recall_at_5": 0.9235301735301734
+        }
+      }
+    ],
+    "selection_rule": "Improve held-out macro R@1, preserve macro R@5 and limit each-language R@1 decrease to 0.02; otherwise retain original BGE embeddings.",
+    "competition_score": null,
+    "closed_model_used": false,
+    "limitation": "Held-out weak context retrieval is not document/chunk F2 on Vietnamese competition questions. It cannot verify the >0.5 target."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "complete": true,
+  "samples": 384,
+  "sources": "128 original chunks each from VI start, current cursor and EN end",
+  "original_id_order_preserved": true,
+  "results": [
+    {
+      "batch": 4,
+      "sorted": false,
+      "chunks_per_second": 58.748483803523904,
+      "minimum_cosine_vs_original": 0.9999998807907104,
+      "max_component_difference": 0.0,
+      "seconds": [
+        7.24532280000858,
+        5.827354999957606
+      ],
+      "finite": true
+    },
+    {
+      "batch": 16,
+      "sorted": false,
+      "chunks_per_second": 80.46185355379468,
+      "minimum_cosine_vs_original": 0.999962568283081,
+      "max_component_difference": 0.0009321640245616436,
+      "seconds": [
+        4.559640899999067,
+        4.98525480000535
+      ],
+      "finite": true
+    },
+    {
+      "batch": 16,
+      "sorted": true,
+      "chunks_per_second": 91.24148294048706,
+      "minimum_cosine_vs_original": 0.999962568283081,
+      "max_component_difference": 0.0009321640245616436,
+      "seconds": [
+        4.226567099976819,
+        4.19065689999843
+      ],
+      "finite": true
+    }
+  ],
+  "use_sorted": true,
+  "speedup_vs_original": 1.5530865995730452
+}

@@ -1,0 +1,47 @@
+{
+  "bge_m3": {
+    "model_id": "BAAI/bge-m3",
+    "revision": "7b44caba5c06fd6f1ef1d2786261e636c38e4295",
+    "published_at": "2024-01-27T17:07:29+00:00",
+    "revision_at": "2024-04-02T13:03:35+00:00",
+    "parameter_count": 567754752,
+    "parameter_evidence": "evidence/bge-m3-safetensors-header.json",
+    "public_url": "https://huggingface.co/BAAI/bge-m3",
+    "weights_file": "model.safetensors",
+    "weights_sha256": "993b2248881724788dcab8c644a91dfd63584b6e5604ff2037cb5541e1e38e7e",
+    "dimension": 1024,
+    "backend": "torch",
+    "pooling": "cls",
+    "query_prefix": "",
+    "passage_prefix": ""
+  },
+  "reranker_m3": {
+    "model_id": "BAAI/bge-reranker-v2-m3",
+    "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "published_at": "2024-03-15T13:32:18+00:00",
+    "revision_at": "2024-06-24T14:08:45+00:00",
+    "parameter_count": 567755777,
+    "parameter_evidence": "evidence/BAAI--bge-reranker-v2-m3--revision.json",
+    "public_url": "https://huggingface.co/BAAI/bge-reranker-v2-m3",
+    "weights_file": "model.safetensors",
+    "weights_sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+    "backend": "torch",
+    "role": "reranker"
+  },
+  "e5_small_onnx": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "6a0d452a575215f80b8f66276dd4ee5d504942c6",
+    "published_at": "2023-06-30T07:31:03+00:00",
+    "revision_at": "2025-02-17T03:11:32+00:00",
+    "parameter_count": 117653760,
+    "parameter_evidence": "evidence/intfloat--multilingual-e5-small--revision.json",
+    "public_url": "https://huggingface.co/intfloat/multilingual-e5-small",
+    "weights_file": "onnx/model_qint8_avx512_vnni.onnx",
+    "weights_sha256": "dd476dd0c2514e9b9be83aeb3853fac0763e0bdf4a71645407587d77c48a2d88",
+    "dimension": 384,
+    "backend": "onnx",
+    "pooling": "mean",
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: "
+  }
+}
