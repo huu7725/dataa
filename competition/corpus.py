@@ -144,6 +144,8 @@ class Corpus:
             a, b = candidate["start"], candidate["end"]
         return a, b, self.document(candidate["doc_id"])[a:b]
     def lexical(self, query, k):
+        if k <= 0:
+            return []
         terms = list(dict.fromkeys(lexical_terms(query)))
         ranked = []
         for term in terms:

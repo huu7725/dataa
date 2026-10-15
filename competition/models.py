@@ -194,7 +194,12 @@ class Encoder:
             try:
                 with torch.inference_mode():
                     hidden = self.model(**tensors).last_hidden_state
-                    vector = hidden[:,0].float().cpu().numpy()
+                    if self.entry.get('pooling') == 'mean':
+                        mask = tensors['attention_mask'].unsqueeze(-1).expand(hidden.size()).float()
+                        vector = (hidden * mask).sum(1) / mask.sum(1).clamp(min=1e-9)
+                    else:
+                        vector = hidden[:,0]
+                    vector = vector.float().cpu().numpy()
                 del hidden
             except torch.cuda.OutOfMemoryError:
                 del tensors

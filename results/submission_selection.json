@@ -1,0 +1,9 @@
+{
+  "selected": "docs50_chunks80",
+  "zip": "results/submission.zip",
+  "queries": 1200,
+  "documents": 56192,
+  "chunks": 61165,
+  "id_serialization": "integer",
+  "zip_sha256": "cc411fd4b9db67c075f6d396e7f16bbdd15749bc8a79fe33ae602280f0bca42a"
+}
