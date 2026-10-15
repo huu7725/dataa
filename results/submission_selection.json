@@ -4,7 +4,5 @@
   "reason": "high-recall variant scored lower; actual high-recall rerun pending GPU resources",
   "queries": 1200,
   "zip_sha256": "548229f3bb96dea1d521c90364ed910c411a6bb89cc1918bb55591b030ea98dd",
-  "created_at": "2026-10-15T03:49:45.022256+00:00",
-  "high_recall_score": 0.1078,
-  "note": "High-recall trial was generated from an old 64-candidate ranking cache and is not a valid comparison; baseline remains selected pending an actual rerun."
+  "created_at": "2026-10-15T03:49:45.022256+00:00"
 }
