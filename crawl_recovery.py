@@ -199,4 +199,10 @@ class RecoveryClient:
                 break
             except (RequestException, asyncio.TimeoutError) as exc:
                 error = 'TimeoutError' if 'timeout' in str(exc).lower() else 'ClientConnectorError'
+            except Exception as exc:
+                # curl_cffi can raise a transport-specific CurlError outside
+                # its requests exception hierarchy. Keep the original ID
+                # retryable and let the bounded crawler continue.
+                error = type(exc).__name__
+                await asyncio.sleep(0.05)
         return (doc_id, original, None, error, failure_status)
